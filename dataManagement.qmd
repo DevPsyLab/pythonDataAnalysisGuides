@@ -18,7 +18,7 @@ format:
 Importing data takes syntax of the following form for `.csv` files:
 
 ```{python}
-#| eval = false
+#| eval: false
 
 import pandas as pd
 
