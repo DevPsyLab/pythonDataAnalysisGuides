@@ -1,1 +1,1 @@
-Sitemap: https://DevPsyLab.github.io/QuartoWebsite/sitemap.xml
+Sitemap: https://DevPsyLab.github.io/pythonDataAnalysisGuides/sitemap.xml
