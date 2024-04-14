@@ -55,7 +55,6 @@ mydata = pd.read_csv("https://osf.io/s6wrm/download") # uses the pandas module
 ```
 
 ```{python}
-#| include: false
 
 mydata = pd.read_csv("data/titanic.csv") #https://osf.io/s6wrm/download
 ```
