@@ -18,8 +18,10 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install Jupyter
+      - name: Setup Python Jupyter
         uses: actions/setup-python@v4
+
+      - name: Install Jupyter
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
         run: pip install jupyter
