@@ -7,6 +7,10 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - text: Python Guides
+        menu:
+        - text: Data Management
+          href: dataManagement.qmd
       - text: Links
         menu:
         - text: Lab Wiki

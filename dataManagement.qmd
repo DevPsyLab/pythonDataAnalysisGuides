@@ -15,7 +15,7 @@ format:
 
 # Import Data {#importData}
 
-Importing data takes syntax of the following form for `.csv` files:
+Importing data using `pandas` takes syntax of the following form for `.csv` files:
 
 ```{python}
 #| eval: false
@@ -23,4 +23,22 @@ Importing data takes syntax of the following form for `.csv` files:
 import pandas as pd
 
 data = pd.read_csv("filepath/filename.csv")
+```
+
+Below, I import a `.csv` file and save it into an object called `mydata` (you could call this object whatever you want):
+
+```{python}
+#| eval: false
+
+import pandas as pd
+
+data = pd.read_csv("https://osf.io/s6wrm/download")
+```
+
+```{python}
+#| include: false
+
+import pandas as pd
+
+data = pd.read_csv("data/titanic.csv") #https://osf.io/s6wrm/download
 ```
