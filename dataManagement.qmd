@@ -369,9 +369,13 @@ mydata.loc[mydata['sex'] == "female", 'oldVar2'] = 0
 Recode multiple variables:
 
 ```{python}
-mydata.loc[:, 'survived':'pclass'] = mydata.loc[:, 'survived':'pclass'].map(lambda x: 'Yes' if x == 1 else 'No')
+columns_to_recode = ['survived', 'pclass']
 
-mydata.loc[:, 'survived':'pclass'] = mydata.loc[:, 'survived':'pclass'].map(lambda x: 1 if x in [0, 1] else 2)
+for col in columns_to_recode:
+    mydata[col] = mydata[col].map({1: 'Yes', 0: 'No'})
+
+for col in columns_to_recode:
+    mydata[col] = mydata[col].map(lambda x: 1 if x in [0, 1] else 2)
 ```
 
 # Rename Variables {#renameVars}
