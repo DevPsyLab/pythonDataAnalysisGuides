@@ -23,6 +23,7 @@ jobs:
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
       - run: pip install jupyter
+      - run: pip install -r requirements.txt
     
       - name: Install R
         uses: r-lib/actions/setup-r@v2
