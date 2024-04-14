@@ -13,6 +13,29 @@ format:
       toggle: true
 ---
 
+# Import Modules {#importModules}
+
+The default way to import a module in `Python` is:
+
+```{python}
+#| eval: false
+
+import moduleName1
+import moduleName2
+```
+
+For example:
+
+```{r}
+import math
+import random
+import collections
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as pp
+```
+
 # Import Data {#importData}
 
 Importing data using `pandas` takes syntax of the following form for `.csv` files:
@@ -20,9 +43,7 @@ Importing data using `pandas` takes syntax of the following form for `.csv` file
 ```{python}
 #| eval: false
 
-import pandas as pd
-
-data = pd.read_csv("filepath/filename.csv")
+data = pd.read_csv("filepath/filename.csv") # uses the pandas module
 ```
 
 Below, I import a `.csv` file and save it into an object called `mydata` (you could call this object whatever you want):
@@ -30,15 +51,582 @@ Below, I import a `.csv` file and save it into an object called `mydata` (you co
 ```{python}
 #| eval: false
 
-import pandas as pd
-
-data = pd.read_csv("https://osf.io/s6wrm/download")
+mydata = pd.read_csv("https://osf.io/s6wrm/download") # uses the pandas module
 ```
 
 ```{python}
 #| include: false
 
-import pandas as pd
+mydata = pd.read_csv("data/titanic.csv") #https://osf.io/s6wrm/download
+```
 
-data = pd.read_csv("data/titanic.csv") #https://osf.io/s6wrm/download
+# Save Data {#saveData}
+
+Saving data in Python takes syntax of the following form for `.csv` files:
+
+```{python}
+#| eval: false
+
+object.to_csv("filepath/filename.csv", index = False)
+```
+
+For example:
+
+```{python}
+#| eval: false
+
+mydata.to_csv("mydata.csv", index = False)
+```
+
+# Set a Seed {#seed}
+
+Set a seed (any number) to reproduce the results of analyses that involve random number generation.
+
+```{python}
+random.seed(52242) # uses the random module
+```
+
+# Run a `Python` Script {#runScript}
+
+To run a `Python` script, use the following syntax:
+
+```{python}
+#| eval: false
+
+%run "filepath/filename.py"
+```
+
+# Render a Quarto (`.qmd`) File {#renderQmd}
+
+To render a Quarto (`.qmd`) file, you would typically use the command line.
+Here is the equivalent command in a `Python` cell using the `!` operator to run shell commands:
+
+```{python}
+#| eval: false
+
+!quarto render "filepath/filename.qmd"
+```
+
+# Variable Names {#varNames}
+
+To look at the names of variables in a dataframe, use the following syntax:
+
+```{python}
+list(mydata.columns)
+```
+
+# Logical Operators {#logicalOperators}
+
+Logical operators evaluate a condition for each value and yield values of `True` and `False`, corresponding to whether the evaluation for a given value met the condition.
+
+## Is Equal To: `==`
+
+```{python}
+mydata['survived'] == 1
+```
+
+## Is Not Equal To: `!=`
+
+```{python}
+mydata['survived'] != 1
+```
+
+### Greater Than: `>`
+
+```{python}
+mydata['parch'] > 1
+```
+
+## Less Than: `<`
+
+```{python}
+mydata['parch'] < 1
+```
+
+## Greater Than or Equal To: `>=`
+
+```{python}
+mydata['parch'] >= 1
+```
+
+## Less Than or Equal To: `<=`
+
+```{python}
+mydata['parch'] <= 1
+```
+
+## Is in a Value of Another Vector: `isin`
+
+```{python}
+anotherVector = [0,1]
+mydata['parch'].isin(anotherVector)
+```
+
+## Is Not in a Value of Another Vector
+
+In Python, you can use the `~` operator in combination with the `isin` method to check if values are not in another sequence.
+
+```{python}
+~mydata['parch'].isin(anotherVector)
+```
+
+## Is Missing: `isnull()`
+
+```{python}
+mydata['prediction'].isnull()
+```
+
+## Is Not Missing: `notnull()`
+
+```{python}
+mydata['prediction'].notnull()
+```
+
+## And: `&`
+
+```{python}
+mydata['prediction'].notnull() & (mydata['parch'] >= 1)
+```
+
+## Or: `|`
+
+```{python}
+mydata['prediction'].isnull() | (mydata['parch'] >= 1)
+```
+
+# Subset {#subset}
+
+To subset a dataframe, you can use the `loc` and `iloc` accessors, or directly access the columns by their names.
+
+```{python}
+#| eval: false
+
+dataframe.loc[rowsToKeep, columnsToKeep]
+dataframe.iloc[rowIndices, columnIndices]
+```
+
+You can subset by using any of the following:
+
+- numeric indices of the rows/columns to keep (or drop)
+- names of the rows/columns to keep (or drop)
+- boolean arrays corresponding to which rows/columns to keep
+
+## One Variable
+
+To subset one variable, use the following syntax:
+
+```{python}
+mydata['age']
+```
+
+## Particular Rows of One Variable
+
+To subset one variable, use the following syntax:
+
+```{python}
+mydata.loc[mydata['survived'] == 1, 'age']
+```
+
+## Particular Columns (Variables)
+
+To subset particular columns/variables, use the following syntax:
+
+```{python}
+subsetVars = ["survived", "age", "prediction"]
+
+mydata[subsetVars]
+```
+
+Or, to drop columns:
+
+```{python}
+dropVars = ["sibsp", "parch"]
+
+mydata.drop(columns = dropVars)
+```
+
+## Particular Rows
+
+To subset particular rows, you can use the `iloc` accessor or boolean indexing.
+
+```{python}
+subsetRows = [0, 2, 4]  # Python uses 0-based indexing
+
+mydata.iloc[subsetRows]
+mydata[mydata['survived'] == 1]
+```
+
+## Particular Rows and Columns
+
+To subset particular rows and columns, you can use the `iloc` accessor or boolean indexing.
+
+```{python}
+subsetRows = [0, 2, 4]  # Python uses 0-based indexing
+subsetVars = ["survived", "age", "prediction"]
+
+mydata.iloc[subsetRows][subsetVars]
+mydata.loc[mydata['survived'] == 1, subsetVars]
+```
+
+# View Data {#viewData}
+
+## All Data
+
+To view data in Python, you can simply print the dataframe:
+
+```{python}
+print(mydata)
+```
+
+Or, if you're using a `Jupyter` notebook, you can just write the name of the dataframe:
+
+```{python}
+mydata
+```
+
+## First 6 Rows/Elements
+
+To view only the first six rows of a dataframe or elements of a series, use the following syntax:
+
+```{python}
+mydata.head()
+mydata['age'].head()
+```
+
+# Data Characteristics {#dataCharacteristics}
+
+## Data Structure
+
+```{python}
+print(mydata.info())
+```
+
+## Data Dimensions
+
+Number of rows and columns:
+
+```{python}
+print(mydata.shape)
+```
+
+## Number of Elements
+
+```{python}
+print(len(mydata['age']))
+```
+
+## Number of Missing Elements
+
+```{python}
+print(mydata['age'].isnull().sum())
+```
+
+## Number of Non-Missing Elements
+
+```{python}
+print(mydata['age'].notnull().sum())
+```
+
+# Create New Variables {#createNewVars}
+
+To create a new variable, you can directly assign a value to a new column in the dataframe.
+
+```{python}
+mydata['newVar'] = None
+```
+
+Here is an example of creating a new variable:
+
+```{python}
+mydata['ID'] = range(1, len(mydata) + 1)
+```
+
+# Create a Dataframe {#createDF}
+
+Here is an example of creating a dataframe:
+
+```{python}
+mydata2 = pd.DataFrame({ # uses pandas module
+  'ID': list(range(1, 6)) + list(range(1047, 1052)),
+  'cat': np.random.choice([0, 1], 10) # uses numpy module
+})
+
+mydata2
+```
+
+# Recode Variables {#recodeVars}
+
+Here is an example of recoding a variable:
+
+```{python}
+mydata.loc[mydata['sex'] == "male", 'oldVar1'] = 0
+mydata.loc[mydata['sex'] == "female", 'oldVar1'] = 1
+
+mydata.loc[mydata['sex'] == "male", 'oldVar2'] = 1
+mydata.loc[mydata['sex'] == "female", 'oldVar2'] = 0
+```
+
+Recode multiple variables:
+
+```{python}
+mydata.loc[:, 'survived':'pclass'] = mydata.loc[:, 'survived':'pclass'].map(lambda x: 'Yes' if x == 1 else 'No')
+
+mydata.loc[:, 'survived':'pclass'] = mydata.loc[:, 'survived':'pclass'].map(lambda x: 1 if x in [0, 1] else 2)
+```
+
+# Rename Variables {#renameVars}
+
+```{python}
+mydata = mydata.rename(columns = {
+    'oldVar1': 'newVar1',
+    'oldVar2': 'newVar2'
+})
+```
+
+Using a dictionary of variable names:
+
+```{python}
+#| eval: false
+
+varNamesFrom = ["oldVar1","oldVar2"]
+varNamesTo = ["newVar1","newVar2"]
+
+rename_dict = dict(zip(varNamesFrom, varNamesTo))
+
+mydata = mydata.rename(columns = rename_dict)
+```
+
+# Convert the Types of Variables {#convertVarTypes}
+
+One variable:
+
+```{python}
+mydata['factorVar'] = mydata['sex'].astype('category')
+mydata['numericVar'] = mydata['prediction'].astype(float)
+mydata['integerVar'] = mydata['parch'].astype(int)
+mydata['characterVar'] = mydata['sex'].astype(str)
+```
+
+Multiple variables:
+
+```{python}
+mydata[['age', 'parch', 'prediction']] = mydata[['age', 'parch', 'prediction']].astype(float)
+
+mydata.loc[:, 'age':'parch'] = mydata.loc[:, 'age':'parch'].astype(float)
+
+# Convert all categorical columns to string
+for col in mydata.select_dtypes('category').columns:
+    mydata[col] = mydata[col].astype(str)
+```
+
+# Merging/Joins {#merging}
+
+## Overview
+
+Merging (also called joining) merges two data objects using a shared set of variables called "keys."
+The keys are the variable(s) that uniquely identify each row (i.e., they account for the levels of nesting).
+In some data objects, the key might be the participant's ID (e.g., `participantID`).
+However, some data objects have multiple keys.
+For instance, in long form data objects, each participant may have multiple rows corresponding to multiple timepoints.
+In this case, the keys are `participantID` and `timepoint`.
+If a participant has multiple rows corresponding to timepoints and measures, the keys are `participantID`, `timepoint`, and `measure`.
+In general, each row should have a value on each of the keys; there should be no missingness in the keys.
+
+To merge two objects, the keys must be present in both objects.
+The keys are used to merge the variables in object 1 (`x`) with the variables in object 2 (`y`).
+Different merge types select different rows to merge.
+
+Note: if the two objects include variables with the same name (apart from the keys), Python will not know how you want each to appear in the merged object.
+So, it will add a suffix (e.g., `_x`, `_y`) to each common variable to indicate which object (i.e., object `x` or object `y`) the variable came from, where object `x` is the first object—i.e., the object to which object `y` (the second object) is merged.
+In general, apart from the keys, you should not include variables with the same name in two objects to be merged.
+To prevent this, either remove or rename the shared variable in one of the objects, or include the shared variable as a key.
+However, as described above, you should include it as a key ***only*** if it uniquely identifies each row in terms of levels of nesting.
+
+## Data Before Merging
+
+Here are the data in the `mydata` object:
+
+```{python}
+print(mydata)
+
+print(mydata.shape)
+```
+
+Here are the data in the `mydata2` object:
+
+```{python}
+print(mydata2)
+
+print(mydata2.shape)
+```
+
+## Types of Joins {#mergeTypes}
+
+### Visual Overview of Join Types
+
+Below is a visual that depicts various types of merges/joins.
+Object `x` is the circle labeled as `A`.
+Object `y` is the circle labeled as `B`.
+The area of overlap in the Venn diagram indicates the rows on the keys that are shared between the two objects (e.g., `participantID` values 1, 2, and 3).
+The non-overlapping area indicates the rows on the keys that are unique to each object (e.g., `participantID` values 4, 5, and 6 in Object `x` and values 7, 8, and 9 in Object `y`).
+The shaded yellow area indicates which rows (on the keys) are kept in the merged object from each of the two objects, when using each of the merge types.
+For instance, a left outer join keeps the shared rows and the rows that are unique to object `x`, but it drops the rows that are unique to object `y`.
+
+![Types of merges/joins](images/joins.png)
+
+Image source: [Predictive Hacks](https://predictivehacks.com/?all-tips=anti-joins-with-pandas) (archived at: https://perma.cc/WV7U-BS68)
+
+### Full Outer Join {#fullJoin}
+
+A full outer join includes all rows in $x$ **or** $y$.
+It returns columns from $x$ and $y$.
+Here is how to merge two data frames using a full outer join (i.e., "full join"):
+
+```{python}
+fullJoinData = pd.merge(mydata, mydata2, on = "ID", how = "outer")
+
+print(fullJoinData)
+print(fullJoinData.shape)
+```
+
+### Left Outer Join {#leftJoin}
+
+A left outer join includes all rows in $x$.
+It returns columns from $x$ and $y$.
+Here is how to merge two data frames using a left outer join ("left join"):
+
+```{python}
+leftJoinData = pd.merge(mydata, mydata2, on = "ID", how = "left")
+
+print(leftJoinData)
+print(leftJoinData.shape)
+```
+
+### Right Outer Join {#rightJoin}
+
+A right outer join includes all rows in $y$.
+It returns columns from $x$ and $y$.
+Here is how to merge two data frames using a right outer join ("right join"):
+
+```{python}
+rightJoinData = pd.merge(mydata, mydata2, on = "ID", how = "right")
+
+print(rightJoinData)
+print(rightJoinData.shape)
+```
+
+### Inner Join {#innerJoin}
+
+An inner join includes all rows that are in **both** $x$ **and** $y$.
+An inner join will return one row of $x$ for each matching row of $y$, and can duplicate values of records on either side (left or right) if $x$ and $y$ have more than one matching record.
+It returns columns from $x$ and $y$.
+Here is how to merge two data frames using an inner join:
+
+```{python}
+innerJoinData = pd.merge(mydata, mydata2, on = "ID", how = "inner")
+
+print(innerJoinData)
+print(innerJoinData.shape)
+```
+
+### Cross Join {#crossJoin}
+
+A cross join combines each row in $x$ with each row in $y$.
+
+```{python}
+rater = pd.DataFrame({'rater': ["Mother","Father","Teacher"]})
+timepoint = pd.DataFrame({'timepoint': range(1, 4)})
+
+crossJoinData = rater.assign(key = 1).merge(timepoint.assign(key = 1), on = 'key').drop('key', axis = 1)
+
+print(crossJoinData)
+print(crossJoinData.shape)
+```
+
+# Long to Wide {#longToWide}
+
+```{python}
+import seaborn as sns
+
+# Load the iris dataset
+iris = sns.load_dataset('iris')
+
+# Melt the dataset to a long format
+iris_long = iris.melt(
+    id_vars = 'species',
+    var_name = 'measurement',
+    value_name = 'value')
+
+print(iris_long)
+
+# Pivot the dataset to a wide format
+iris_wide = iris_long.pivot_table(
+    index = 'species',
+    columns = 'measurement',
+    values = 'value')
+
+print(iris_wide)
+```
+
+# Wide to Long {#wideToLong}
+
+Original data:
+
+```{python}
+import seaborn as sns
+
+# Load the iris dataset
+iris = sns.load_dataset('iris')
+
+print(iris)
+```
+
+Data in long form, transformed from wide form using `pandas`:
+
+```{python}
+iris_long = iris.melt(
+    id_vars = 'species',
+    var_name = 'measurement',
+    value_name = 'value')
+
+print(iris_long)
+```
+
+# Average Ratings Across Coders {#avgAcrossCoders}
+
+Create data with multiple coders:
+
+```{python}
+# Create a dataframe with multiple coders
+idWaveCoder = pd.DataFrame(np.array(np.meshgrid(np.arange(1, 101), np.arange(1, 4), np.arange(1, 4))).T.reshape(-1,3), columns=['id', 'wave', 'coder'])
+
+# Add positiveAffect and negativeAffect columns with random values
+np.random.seed(0)
+idWaveCoder['positiveAffect'] = np.random.randn(len(idWaveCoder))
+idWaveCoder['negativeAffect'] = np.random.randn(len(idWaveCoder))
+
+# Sort the dataframe
+idWaveCoder = idWaveCoder.sort_values(['id', 'wave', 'coder'])
+
+print(idWaveCoder)
+```
+
+Average data across coders:
+
+```{python}
+# Group by id and wave, then calculate the mean for each group
+idWave = idWaveCoder.groupby(['id', 'wave']).mean().reset_index()
+
+# Drop the coder column
+idWave = idWave.drop(columns=['coder'])
+
+print(idWave)
+```
+
+# Session Info
+
+```{python}
+import sys
+
+print(sys.version)
 ```
