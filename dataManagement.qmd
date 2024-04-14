@@ -1,0 +1,26 @@
+---
+title: "Data Management"
+execute:
+  echo: true
+  error: true
+  code-fold: true
+jupyter: python3
+format:
+  html:
+    code-fold: false
+    code-tools:
+      source: true
+      toggle: true
+---
+
+# Import Data {#importData}
+
+Importing data takes syntax of the following form for `.csv` files:
+
+```{python}
+#| eval = FALSE
+
+import pandas as pd
+
+data = pd.read_csv("filepath/filename.csv")
+```
