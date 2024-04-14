@@ -12,5 +12,12 @@
     "title": "Website",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "dataManagement.html",
+    "href": "dataManagement.html",
+    "title": "Data Management",
+    "section": "",
+    "text": "1 Import Data\nImporting data takes syntax of the following form for .csv files:\n\nimport pandas as pd\n\ndata = pd.read_csv(\"filepath/filename.csv\")"
   }
 ]
