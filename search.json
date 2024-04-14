@@ -18,168 +18,168 @@
     "href": "dataManagement.html",
     "title": "Data Management",
     "section": "",
-    "text": "The default way to import a module in Python is:\n\nimport moduleName1\nimport moduleName2\n\nFor example:\nimport math\nimport random\nimport collections\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as pp"
+    "text": "The default way to import a module in Python is:\n\nimport moduleName1\nimport moduleName2\n\nFor example:\n\nimport math\nimport random\nimport collections\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as pp"
   },
   {
     "objectID": "dataManagement.html#is-equal-to",
     "href": "dataManagement.html#is-equal-to",
     "title": "Data Management",
     "section": "8.1 Is Equal To: ==",
-    "text": "8.1 Is Equal To: ==\n\nmydata['survived'] == 1\n\nNameError: name 'mydata' is not defined"
+    "text": "8.1 Is Equal To: ==\n\nmydata['survived'] == 1\n\n0        True\n1        True\n2       False\n3       False\n4       False\n        ...  \n1041    False\n1042    False\n1043    False\n1044    False\n1045    False\nName: survived, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#is-not-equal-to",
     "href": "dataManagement.html#is-not-equal-to",
     "title": "Data Management",
     "section": "8.2 Is Not Equal To: !=",
-    "text": "8.2 Is Not Equal To: !=\n\nmydata['survived'] != 1\n\nNameError: name 'mydata' is not defined\n\n\n\n8.2.1 Greater Than: &gt;\n\nmydata['parch'] &gt; 1\n\nNameError: name 'mydata' is not defined"
+    "text": "8.2 Is Not Equal To: !=\n\nmydata['survived'] != 1\n\n0       False\n1       False\n2        True\n3        True\n4        True\n        ...  \n1041     True\n1042     True\n1043     True\n1044     True\n1045     True\nName: survived, Length: 1046, dtype: bool\n\n\n\n8.2.1 Greater Than: &gt;\n\nmydata['parch'] &gt; 1\n\n0       False\n1        True\n2        True\n3        True\n4        True\n        ...  \n1041    False\n1042    False\n1043    False\n1044    False\n1045    False\nName: parch, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#less-than",
     "href": "dataManagement.html#less-than",
     "title": "Data Management",
     "section": "8.3 Less Than: <",
-    "text": "8.3 Less Than: &lt;\n\nmydata['parch'] &lt; 1\n\nNameError: name 'mydata' is not defined"
+    "text": "8.3 Less Than: &lt;\n\nmydata['parch'] &lt; 1\n\n0        True\n1       False\n2       False\n3       False\n4       False\n        ...  \n1041     True\n1042     True\n1043     True\n1044     True\n1045     True\nName: parch, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#greater-than-or-equal-to",
     "href": "dataManagement.html#greater-than-or-equal-to",
     "title": "Data Management",
     "section": "8.4 Greater Than or Equal To: >=",
-    "text": "8.4 Greater Than or Equal To: &gt;=\n\nmydata['parch'] &gt;= 1\n\nNameError: name 'mydata' is not defined"
+    "text": "8.4 Greater Than or Equal To: &gt;=\n\nmydata['parch'] &gt;= 1\n\n0       False\n1        True\n2        True\n3        True\n4        True\n        ...  \n1041    False\n1042    False\n1043    False\n1044    False\n1045    False\nName: parch, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#less-than-or-equal-to",
     "href": "dataManagement.html#less-than-or-equal-to",
     "title": "Data Management",
     "section": "8.5 Less Than or Equal To: <=",
-    "text": "8.5 Less Than or Equal To: &lt;=\n\nmydata['parch'] &lt;= 1\n\nNameError: name 'mydata' is not defined"
+    "text": "8.5 Less Than or Equal To: &lt;=\n\nmydata['parch'] &lt;= 1\n\n0        True\n1       False\n2       False\n3       False\n4       False\n        ...  \n1041     True\n1042     True\n1043     True\n1044     True\n1045     True\nName: parch, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#is-in-a-value-of-another-vector-isin",
     "href": "dataManagement.html#is-in-a-value-of-another-vector-isin",
     "title": "Data Management",
     "section": "8.6 Is in a Value of Another Vector: isin",
-    "text": "8.6 Is in a Value of Another Vector: isin\n\nanotherVector = [0,1]\nmydata['parch'].isin(anotherVector)\n\nNameError: name 'mydata' is not defined"
+    "text": "8.6 Is in a Value of Another Vector: isin\n\nanotherVector = [0,1]\nmydata['parch'].isin(anotherVector)\n\n0        True\n1       False\n2       False\n3       False\n4       False\n        ...  \n1041     True\n1042     True\n1043     True\n1044     True\n1045     True\nName: parch, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#is-not-in-a-value-of-another-vector",
     "href": "dataManagement.html#is-not-in-a-value-of-another-vector",
     "title": "Data Management",
     "section": "8.7 Is Not in a Value of Another Vector",
-    "text": "8.7 Is Not in a Value of Another Vector\nIn Python, you can use the ~ operator in combination with the isin method to check if values are not in another sequence.\n\n~mydata['parch'].isin(anotherVector)\n\nNameError: name 'mydata' is not defined"
+    "text": "8.7 Is Not in a Value of Another Vector\nIn Python, you can use the ~ operator in combination with the isin method to check if values are not in another sequence.\n\n~mydata['parch'].isin(anotherVector)\n\n0       False\n1        True\n2        True\n3        True\n4        True\n        ...  \n1041    False\n1042    False\n1043    False\n1044    False\n1045    False\nName: parch, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#is-missing-isnull",
     "href": "dataManagement.html#is-missing-isnull",
     "title": "Data Management",
     "section": "8.8 Is Missing: isnull()",
-    "text": "8.8 Is Missing: isnull()\n\nmydata['prediction'].isnull()\n\nNameError: name 'mydata' is not defined"
+    "text": "8.8 Is Missing: isnull()\n\nmydata['prediction'].isnull()\n\n0       False\n1       False\n2       False\n3       False\n4       False\n        ...  \n1041    False\n1042    False\n1043    False\n1044    False\n1045    False\nName: prediction, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#is-not-missing-notnull",
     "href": "dataManagement.html#is-not-missing-notnull",
     "title": "Data Management",
     "section": "8.9 Is Not Missing: notnull()",
-    "text": "8.9 Is Not Missing: notnull()\n\nmydata['prediction'].notnull()\n\nNameError: name 'mydata' is not defined"
+    "text": "8.9 Is Not Missing: notnull()\n\nmydata['prediction'].notnull()\n\n0       True\n1       True\n2       True\n3       True\n4       True\n        ... \n1041    True\n1042    True\n1043    True\n1044    True\n1045    True\nName: prediction, Length: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#and",
     "href": "dataManagement.html#and",
     "title": "Data Management",
     "section": "8.10 And: &",
-    "text": "8.10 And: &\n\nmydata['prediction'].notnull() & (mydata['parch'] &gt;= 1)\n\nNameError: name 'mydata' is not defined"
+    "text": "8.10 And: &\n\nmydata['prediction'].notnull() & (mydata['parch'] &gt;= 1)\n\n0       False\n1        True\n2        True\n3        True\n4        True\n        ...  \n1041    False\n1042    False\n1043    False\n1044    False\n1045    False\nLength: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#or",
     "href": "dataManagement.html#or",
     "title": "Data Management",
     "section": "8.11 Or: |",
-    "text": "8.11 Or: |\n\nmydata['prediction'].isnull() | (mydata['parch'] &gt;= 1)\n\nNameError: name 'mydata' is not defined"
+    "text": "8.11 Or: |\n\nmydata['prediction'].isnull() | (mydata['parch'] &gt;= 1)\n\n0       False\n1        True\n2        True\n3        True\n4        True\n        ...  \n1041    False\n1042    False\n1043    False\n1044    False\n1045    False\nLength: 1046, dtype: bool"
   },
   {
     "objectID": "dataManagement.html#one-variable",
     "href": "dataManagement.html#one-variable",
     "title": "Data Management",
     "section": "9.1 One Variable",
-    "text": "9.1 One Variable\nTo subset one variable, use the following syntax:\n\nmydata['age']\n\nNameError: name 'mydata' is not defined"
+    "text": "9.1 One Variable\nTo subset one variable, use the following syntax:\n\nmydata['age']\n\n0       29.00\n1        0.92\n2        2.00\n3       30.00\n4       25.00\n        ...  \n1041    45.50\n1042    14.50\n1043    26.50\n1044    27.00\n1045    29.00\nName: age, Length: 1046, dtype: float64"
   },
   {
     "objectID": "dataManagement.html#particular-rows-of-one-variable",
     "href": "dataManagement.html#particular-rows-of-one-variable",
     "title": "Data Management",
     "section": "9.2 Particular Rows of One Variable",
-    "text": "9.2 Particular Rows of One Variable\nTo subset one variable, use the following syntax:\n\nmydata.loc[mydata['survived'] == 1, 'age']\n\nNameError: name 'mydata' is not defined"
+    "text": "9.2 Particular Rows of One Variable\nTo subset one variable, use the following syntax:\n\nmydata.loc[mydata['survived'] == 1, 'age']\n\n0       29.00\n1        0.92\n5       48.00\n6       63.00\n8       53.00\n        ...  \n1010    63.00\n1024    22.00\n1030    38.00\n1034    47.00\n1040    15.00\nName: age, Length: 427, dtype: float64"
   },
   {
     "objectID": "dataManagement.html#particular-columns-variables",
     "href": "dataManagement.html#particular-columns-variables",
     "title": "Data Management",
     "section": "9.3 Particular Columns (Variables)",
-    "text": "9.3 Particular Columns (Variables)\nTo subset particular columns/variables, use the following syntax:\n\nsubsetVars = [\"survived\", \"age\", \"prediction\"]\n\nmydata[subsetVars]\n\nNameError: name 'mydata' is not defined\n\n\nOr, to drop columns:\n\ndropVars = [\"sibsp\", \"parch\"]\n\nmydata.drop(columns = dropVars)\n\nNameError: name 'mydata' is not defined"
+    "text": "9.3 Particular Columns (Variables)\nTo subset particular columns/variables, use the following syntax:\n\nsubsetVars = [\"survived\", \"age\", \"prediction\"]\n\nmydata[subsetVars]\n\n\n\n\n\n\n\n\n\nsurvived\nage\nprediction\n\n\n\n\n0\n1\n29.00\n0.944861\n\n\n1\n1\n0.92\n0.783519\n\n\n2\n0\n2.00\n0.978557\n\n\n3\n0\n30.00\n0.516082\n\n\n4\n0\n25.00\n0.945537\n\n\n...\n...\n...\n...\n\n\n1041\n0\n45.50\n0.058135\n\n\n1042\n0\n14.50\n0.655366\n\n\n1043\n0\n26.50\n0.115592\n\n\n1044\n0\n27.00\n0.113589\n\n\n1045\n0\n29.00\n0.105877\n\n\n\n\n1046 rows × 3 columns\n\n\n\n\nOr, to drop columns:\n\ndropVars = [\"sibsp\", \"parch\"]\n\nmydata.drop(columns = dropVars)\n\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nprediction\n\n\n\n\n0\n1\n1\nfemale\n29.00\n0.944861\n\n\n1\n1\n1\nmale\n0.92\n0.783519\n\n\n2\n0\n1\nfemale\n2.00\n0.978557\n\n\n3\n0\n1\nmale\n30.00\n0.516082\n\n\n4\n0\n1\nfemale\n25.00\n0.945537\n\n\n...\n...\n...\n...\n...\n...\n\n\n1041\n0\n3\nmale\n45.50\n0.058135\n\n\n1042\n0\n3\nfemale\n14.50\n0.655366\n\n\n1043\n0\n3\nmale\n26.50\n0.115592\n\n\n1044\n0\n3\nmale\n27.00\n0.113589\n\n\n1045\n0\n3\nmale\n29.00\n0.105877\n\n\n\n\n1046 rows × 5 columns"
   },
   {
     "objectID": "dataManagement.html#particular-rows",
     "href": "dataManagement.html#particular-rows",
     "title": "Data Management",
     "section": "9.4 Particular Rows",
-    "text": "9.4 Particular Rows\nTo subset particular rows, you can use the iloc accessor or boolean indexing.\n\nsubsetRows = [0, 2, 4]  # Python uses 0-based indexing\n\nmydata.iloc[subsetRows]\nmydata[mydata['survived'] == 1]\n\nNameError: name 'mydata' is not defined"
+    "text": "9.4 Particular Rows\nTo subset particular rows, you can use the iloc accessor or boolean indexing.\n\nsubsetRows = [0, 2, 4]  # Python uses 0-based indexing\n\nmydata.iloc[subsetRows]\nmydata[mydata['survived'] == 1]\n\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nprediction\n\n\n\n\n0\n1\n1\nfemale\n29.00\n0\n0\n0.944861\n\n\n1\n1\n1\nmale\n0.92\n1\n2\n0.783519\n\n\n5\n1\n1\nmale\n48.00\n0\n0\n0.368893\n\n\n6\n1\n1\nfemale\n63.00\n1\n0\n0.739512\n\n\n8\n1\n1\nfemale\n53.00\n2\n0\n0.749240\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n1010\n1\n3\nfemale\n63.00\n0\n0\n0.271834\n\n\n1024\n1\n3\nmale\n22.00\n0\n0\n0.134332\n\n\n1030\n1\n3\nfemale\n38.00\n0\n0\n0.511020\n\n\n1034\n1\n3\nfemale\n47.00\n1\n0\n0.335634\n\n\n1040\n1\n3\nfemale\n15.00\n1\n0\n0.650893\n\n\n\n\n427 rows × 7 columns"
   },
   {
     "objectID": "dataManagement.html#particular-rows-and-columns",
     "href": "dataManagement.html#particular-rows-and-columns",
     "title": "Data Management",
     "section": "9.5 Particular Rows and Columns",
-    "text": "9.5 Particular Rows and Columns\nTo subset particular rows and columns, you can use the iloc accessor or boolean indexing.\n\nsubsetRows = [0, 2, 4]  # Python uses 0-based indexing\nsubsetVars = [\"survived\", \"age\", \"prediction\"]\n\nmydata.iloc[subsetRows][subsetVars]\nmydata.loc[mydata['survived'] == 1, subsetVars]\n\nNameError: name 'mydata' is not defined"
+    "text": "9.5 Particular Rows and Columns\nTo subset particular rows and columns, you can use the iloc accessor or boolean indexing.\n\nsubsetRows = [0, 2, 4]  # Python uses 0-based indexing\nsubsetVars = [\"survived\", \"age\", \"prediction\"]\n\nmydata.iloc[subsetRows][subsetVars]\nmydata.loc[mydata['survived'] == 1, subsetVars]\n\n\n\n\n\n\n\n\n\nsurvived\nage\nprediction\n\n\n\n\n0\n1\n29.00\n0.944861\n\n\n1\n1\n0.92\n0.783519\n\n\n5\n1\n48.00\n0.368893\n\n\n6\n1\n63.00\n0.739512\n\n\n8\n1\n53.00\n0.749240\n\n\n...\n...\n...\n...\n\n\n1010\n1\n63.00\n0.271834\n\n\n1024\n1\n22.00\n0.134332\n\n\n1030\n1\n38.00\n0.511020\n\n\n1034\n1\n47.00\n0.335634\n\n\n1040\n1\n15.00\n0.650893\n\n\n\n\n427 rows × 3 columns"
   },
   {
     "objectID": "dataManagement.html#all-data",
     "href": "dataManagement.html#all-data",
     "title": "Data Management",
     "section": "10.1 All Data",
-    "text": "10.1 All Data\nTo view data in Python, you can simply print the dataframe:\n\nprint(mydata)\n\nNameError: name 'mydata' is not defined\n\n\nOr, if you’re using a Jupyter notebook, you can just write the name of the dataframe:\n\nmydata\n\nNameError: name 'mydata' is not defined"
+    "text": "10.1 All Data\nTo view data in Python, you can simply print the dataframe:\n\nprint(mydata)\n\n      survived  pclass     sex    age  sibsp  parch  prediction\n0            1       1  female  29.00      0      0    0.944861\n1            1       1    male   0.92      1      2    0.783519\n2            0       1  female   2.00      1      2    0.978557\n3            0       1    male  30.00      1      2    0.516082\n4            0       1  female  25.00      1      2    0.945537\n...        ...     ...     ...    ...    ...    ...         ...\n1041         0       3    male  45.50      0      0    0.058135\n1042         0       3  female  14.50      1      0    0.655366\n1043         0       3    male  26.50      0      0    0.115592\n1044         0       3    male  27.00      0      0    0.113589\n1045         0       3    male  29.00      0      0    0.105877\n\n[1046 rows x 7 columns]\n\n\nOr, if you’re using a Jupyter notebook, you can just write the name of the dataframe:\n\nmydata\n\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nprediction\n\n\n\n\n0\n1\n1\nfemale\n29.00\n0\n0\n0.944861\n\n\n1\n1\n1\nmale\n0.92\n1\n2\n0.783519\n\n\n2\n0\n1\nfemale\n2.00\n1\n2\n0.978557\n\n\n3\n0\n1\nmale\n30.00\n1\n2\n0.516082\n\n\n4\n0\n1\nfemale\n25.00\n1\n2\n0.945537\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n1041\n0\n3\nmale\n45.50\n0\n0\n0.058135\n\n\n1042\n0\n3\nfemale\n14.50\n1\n0\n0.655366\n\n\n1043\n0\n3\nmale\n26.50\n0\n0\n0.115592\n\n\n1044\n0\n3\nmale\n27.00\n0\n0\n0.113589\n\n\n1045\n0\n3\nmale\n29.00\n0\n0\n0.105877\n\n\n\n\n1046 rows × 7 columns"
   },
   {
     "objectID": "dataManagement.html#first-6-rowselements",
     "href": "dataManagement.html#first-6-rowselements",
     "title": "Data Management",
     "section": "10.2 First 6 Rows/Elements",
-    "text": "10.2 First 6 Rows/Elements\nTo view only the first six rows of a dataframe or elements of a series, use the following syntax:\n\nmydata.head()\nmydata['age'].head()\n\nNameError: name 'mydata' is not defined"
+    "text": "10.2 First 6 Rows/Elements\nTo view only the first six rows of a dataframe or elements of a series, use the following syntax:\n\nmydata.head()\nmydata['age'].head()\n\n0    29.00\n1     0.92\n2     2.00\n3    30.00\n4    25.00\nName: age, dtype: float64"
   },
   {
     "objectID": "dataManagement.html#data-structure",
     "href": "dataManagement.html#data-structure",
     "title": "Data Management",
     "section": "11.1 Data Structure",
-    "text": "11.1 Data Structure\n\nprint(mydata.info())\n\nNameError: name 'mydata' is not defined"
+    "text": "11.1 Data Structure\n\nprint(mydata.info())\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 1046 entries, 0 to 1045\nData columns (total 7 columns):\n #   Column      Non-Null Count  Dtype  \n---  ------      --------------  -----  \n 0   survived    1046 non-null   int64  \n 1   pclass      1046 non-null   int64  \n 2   sex         1046 non-null   object \n 3   age         1046 non-null   float64\n 4   sibsp       1046 non-null   int64  \n 5   parch       1046 non-null   int64  \n 6   prediction  1046 non-null   float64\ndtypes: float64(2), int64(4), object(1)\nmemory usage: 57.3+ KB\nNone"
   },
   {
     "objectID": "dataManagement.html#data-dimensions",
     "href": "dataManagement.html#data-dimensions",
     "title": "Data Management",
     "section": "11.2 Data Dimensions",
-    "text": "11.2 Data Dimensions\nNumber of rows and columns:\n\nprint(mydata.shape)\n\nNameError: name 'mydata' is not defined"
+    "text": "11.2 Data Dimensions\nNumber of rows and columns:\n\nprint(mydata.shape)\n\n(1046, 7)"
   },
   {
     "objectID": "dataManagement.html#number-of-elements",
     "href": "dataManagement.html#number-of-elements",
     "title": "Data Management",
     "section": "11.3 Number of Elements",
-    "text": "11.3 Number of Elements\n\nprint(len(mydata['age']))\n\nNameError: name 'mydata' is not defined"
+    "text": "11.3 Number of Elements\n\nprint(len(mydata['age']))\n\n1046"
   },
   {
     "objectID": "dataManagement.html#number-of-missing-elements",
     "href": "dataManagement.html#number-of-missing-elements",
     "title": "Data Management",
     "section": "11.4 Number of Missing Elements",
-    "text": "11.4 Number of Missing Elements\n\nprint(mydata['age'].isnull().sum())\n\nNameError: name 'mydata' is not defined"
+    "text": "11.4 Number of Missing Elements\n\nprint(mydata['age'].isnull().sum())\n\n0"
   },
   {
     "objectID": "dataManagement.html#number-of-non-missing-elements",
     "href": "dataManagement.html#number-of-non-missing-elements",
     "title": "Data Management",
     "section": "11.5 Number of Non-Missing Elements",
-    "text": "11.5 Number of Non-Missing Elements\n\nprint(mydata['age'].notnull().sum())\n\nNameError: name 'mydata' is not defined"
+    "text": "11.5 Number of Non-Missing Elements\n\nprint(mydata['age'].notnull().sum())\n\n1046"
   },
   {
     "objectID": "dataManagement.html#overview",
@@ -193,13 +193,13 @@
     "href": "dataManagement.html#data-before-merging",
     "title": "Data Management",
     "section": "17.2 Data Before Merging",
-    "text": "17.2 Data Before Merging\nHere are the data in the mydata object:\n\nprint(mydata)\n\nprint(mydata.shape)\n\nNameError: name 'mydata' is not defined\n\n\nHere are the data in the mydata2 object:\n\nprint(mydata2)\n\nprint(mydata2.shape)\n\nNameError: name 'mydata2' is not defined"
+    "text": "17.2 Data Before Merging\nHere are the data in the mydata object:\n\nprint(mydata)\n\nprint(mydata.shape)\n\n     survived pclass     sex    age  sibsp  parch  prediction newVar    ID  \\\n0           2      2  female  29.00      0    0.0    0.944861   None     1   \n1           2      2    male   0.92      1    2.0    0.783519   None     2   \n2           2      2  female   2.00      1    2.0    0.978557   None     3   \n3           2      2    male  30.00      1    2.0    0.516082   None     4   \n4           2      2  female  25.00      1    2.0    0.945537   None     5   \n...       ...    ...     ...    ...    ...    ...         ...    ...   ...   \n1041        2      2    male  45.50      0    0.0    0.058135   None  1042   \n1042        2      2  female  14.50      1    0.0    0.655366   None  1043   \n1043        2      2    male  26.50      0    0.0    0.115592   None  1044   \n1044        2      2    male  27.00      0    0.0    0.113589   None  1045   \n1045        2      2    male  29.00      0    0.0    0.105877   None  1046   \n\n      newVar1  newVar2 factorVar  numericVar  integerVar characterVar  \n0         1.0      0.0    female    0.944861           0       female  \n1         0.0      1.0      male    0.783519           2         male  \n2         1.0      0.0    female    0.978557           2       female  \n3         0.0      1.0      male    0.516082           2         male  \n4         1.0      0.0    female    0.945537           2       female  \n...       ...      ...       ...         ...         ...          ...  \n1041      0.0      1.0      male    0.058135           0         male  \n1042      1.0      0.0    female    0.655366           0       female  \n1043      0.0      1.0      male    0.115592           0         male  \n1044      0.0      1.0      male    0.113589           0         male  \n1045      0.0      1.0      male    0.105877           0         male  \n\n[1046 rows x 15 columns]\n(1046, 15)\n\n\nHere are the data in the mydata2 object:\n\nprint(mydata2)\n\nprint(mydata2.shape)\n\n     ID  cat\n0     1    0\n1     2    0\n2     3    1\n3     4    1\n4     5    1\n5  1047    0\n6  1048    1\n7  1049    1\n8  1050    1\n9  1051    0\n(10, 2)"
   },
   {
     "objectID": "dataManagement.html#mergeTypes",
     "href": "dataManagement.html#mergeTypes",
     "title": "Data Management",
     "section": "17.3 Types of Joins",
-    "text": "17.3 Types of Joins\n\n17.3.1 Visual Overview of Join Types\nBelow is a visual that depicts various types of merges/joins. Object x is the circle labeled as A. Object y is the circle labeled as B. The area of overlap in the Venn diagram indicates the rows on the keys that are shared between the two objects (e.g., participantID values 1, 2, and 3). The non-overlapping area indicates the rows on the keys that are unique to each object (e.g., participantID values 4, 5, and 6 in Object x and values 7, 8, and 9 in Object y). The shaded yellow area indicates which rows (on the keys) are kept in the merged object from each of the two objects, when using each of the merge types. For instance, a left outer join keeps the shared rows and the rows that are unique to object x, but it drops the rows that are unique to object y.\n\n\n\nTypes of merges/joins\n\n\nImage source: Predictive Hacks (archived at: https://perma.cc/WV7U-BS68)\n\n\n17.3.2 Full Outer Join\nA full outer join includes all rows in \\(x\\) or \\(y\\). It returns columns from \\(x\\) and \\(y\\). Here is how to merge two data frames using a full outer join (i.e., “full join”):\n\nfullJoinData = pd.merge(mydata, mydata2, on = \"ID\", how = \"outer\")\n\nprint(fullJoinData)\nprint(fullJoinData.shape)\n\nNameError: name 'pd' is not defined\n\n\n\n\n17.3.3 Left Outer Join\nA left outer join includes all rows in \\(x\\). It returns columns from \\(x\\) and \\(y\\). Here is how to merge two data frames using a left outer join (“left join”):\n\nleftJoinData = pd.merge(mydata, mydata2, on = \"ID\", how = \"left\")\n\nprint(leftJoinData)\nprint(leftJoinData.shape)\n\nNameError: name 'pd' is not defined\n\n\n\n\n17.3.4 Right Outer Join\nA right outer join includes all rows in \\(y\\). It returns columns from \\(x\\) and \\(y\\). Here is how to merge two data frames using a right outer join (“right join”):\n\nrightJoinData = pd.merge(mydata, mydata2, on = \"ID\", how = \"right\")\n\nprint(rightJoinData)\nprint(rightJoinData.shape)\n\nNameError: name 'pd' is not defined\n\n\n\n\n17.3.5 Inner Join\nAn inner join includes all rows that are in both \\(x\\) and \\(y\\). An inner join will return one row of \\(x\\) for each matching row of \\(y\\), and can duplicate values of records on either side (left or right) if \\(x\\) and \\(y\\) have more than one matching record. It returns columns from \\(x\\) and \\(y\\). Here is how to merge two data frames using an inner join:\n\ninnerJoinData = pd.merge(mydata, mydata2, on = \"ID\", how = \"inner\")\n\nprint(innerJoinData)\nprint(innerJoinData.shape)\n\nNameError: name 'pd' is not defined\n\n\n\n\n17.3.6 Cross Join\nA cross join combines each row in \\(x\\) with each row in \\(y\\).\n\nrater = pd.DataFrame({'rater': [\"Mother\",\"Father\",\"Teacher\"]})\ntimepoint = pd.DataFrame({'timepoint': range(1, 4)})\n\ncrossJoinData = rater.assign(key = 1).merge(timepoint.assign(key = 1), on = 'key').drop('key', axis = 1)\n\nprint(crossJoinData)\nprint(crossJoinData.shape)\n\nNameError: name 'pd' is not defined"
+    "text": "17.3 Types of Joins\n\n17.3.1 Visual Overview of Join Types\nBelow is a visual that depicts various types of merges/joins. Object x is the circle labeled as A. Object y is the circle labeled as B. The area of overlap in the Venn diagram indicates the rows on the keys that are shared between the two objects (e.g., participantID values 1, 2, and 3). The non-overlapping area indicates the rows on the keys that are unique to each object (e.g., participantID values 4, 5, and 6 in Object x and values 7, 8, and 9 in Object y). The shaded yellow area indicates which rows (on the keys) are kept in the merged object from each of the two objects, when using each of the merge types. For instance, a left outer join keeps the shared rows and the rows that are unique to object x, but it drops the rows that are unique to object y.\n\n\n\nTypes of merges/joins\n\n\nImage source: Predictive Hacks (archived at: https://perma.cc/WV7U-BS68)\n\n\n17.3.2 Full Outer Join\nA full outer join includes all rows in \\(x\\) or \\(y\\). It returns columns from \\(x\\) and \\(y\\). Here is how to merge two data frames using a full outer join (i.e., “full join”):\n\nfullJoinData = pd.merge(mydata, mydata2, on = \"ID\", how = \"outer\")\n\nprint(fullJoinData)\nprint(fullJoinData.shape)\n\n     survived pclass     sex    age  sibsp  parch  prediction newVar    ID  \\\n0           2      2  female  29.00    0.0    0.0    0.944861   None     1   \n1           2      2    male   0.92    1.0    2.0    0.783519   None     2   \n2           2      2  female   2.00    1.0    2.0    0.978557   None     3   \n3           2      2    male  30.00    1.0    2.0    0.516082   None     4   \n4           2      2  female  25.00    1.0    2.0    0.945537   None     5   \n...       ...    ...     ...    ...    ...    ...         ...    ...   ...   \n1046      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1047   \n1047      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1048   \n1048      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1049   \n1049      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1050   \n1050      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1051   \n\n      newVar1  newVar2 factorVar  numericVar  integerVar characterVar  cat  \n0         1.0      0.0    female    0.944861         0.0       female  0.0  \n1         0.0      1.0      male    0.783519         2.0         male  0.0  \n2         1.0      0.0    female    0.978557         2.0       female  1.0  \n3         0.0      1.0      male    0.516082         2.0         male  1.0  \n4         1.0      0.0    female    0.945537         2.0       female  1.0  \n...       ...      ...       ...         ...         ...          ...  ...  \n1046      NaN      NaN       NaN         NaN         NaN          NaN  0.0  \n1047      NaN      NaN       NaN         NaN         NaN          NaN  1.0  \n1048      NaN      NaN       NaN         NaN         NaN          NaN  1.0  \n1049      NaN      NaN       NaN         NaN         NaN          NaN  1.0  \n1050      NaN      NaN       NaN         NaN         NaN          NaN  0.0  \n\n[1051 rows x 16 columns]\n(1051, 16)\n\n\n\n\n17.3.3 Left Outer Join\nA left outer join includes all rows in \\(x\\). It returns columns from \\(x\\) and \\(y\\). Here is how to merge two data frames using a left outer join (“left join”):\n\nleftJoinData = pd.merge(mydata, mydata2, on = \"ID\", how = \"left\")\n\nprint(leftJoinData)\nprint(leftJoinData.shape)\n\n     survived pclass     sex    age  sibsp  parch  prediction newVar    ID  \\\n0           2      2  female  29.00      0    0.0    0.944861   None     1   \n1           2      2    male   0.92      1    2.0    0.783519   None     2   \n2           2      2  female   2.00      1    2.0    0.978557   None     3   \n3           2      2    male  30.00      1    2.0    0.516082   None     4   \n4           2      2  female  25.00      1    2.0    0.945537   None     5   \n...       ...    ...     ...    ...    ...    ...         ...    ...   ...   \n1041        2      2    male  45.50      0    0.0    0.058135   None  1042   \n1042        2      2  female  14.50      1    0.0    0.655366   None  1043   \n1043        2      2    male  26.50      0    0.0    0.115592   None  1044   \n1044        2      2    male  27.00      0    0.0    0.113589   None  1045   \n1045        2      2    male  29.00      0    0.0    0.105877   None  1046   \n\n      newVar1  newVar2 factorVar  numericVar  integerVar characterVar  cat  \n0         1.0      0.0    female    0.944861           0       female  0.0  \n1         0.0      1.0      male    0.783519           2         male  0.0  \n2         1.0      0.0    female    0.978557           2       female  1.0  \n3         0.0      1.0      male    0.516082           2         male  1.0  \n4         1.0      0.0    female    0.945537           2       female  1.0  \n...       ...      ...       ...         ...         ...          ...  ...  \n1041      0.0      1.0      male    0.058135           0         male  NaN  \n1042      1.0      0.0    female    0.655366           0       female  NaN  \n1043      0.0      1.0      male    0.115592           0         male  NaN  \n1044      0.0      1.0      male    0.113589           0         male  NaN  \n1045      0.0      1.0      male    0.105877           0         male  NaN  \n\n[1046 rows x 16 columns]\n(1046, 16)\n\n\n\n\n17.3.4 Right Outer Join\nA right outer join includes all rows in \\(y\\). It returns columns from \\(x\\) and \\(y\\). Here is how to merge two data frames using a right outer join (“right join”):\n\nrightJoinData = pd.merge(mydata, mydata2, on = \"ID\", how = \"right\")\n\nprint(rightJoinData)\nprint(rightJoinData.shape)\n\n  survived pclass     sex    age  sibsp  parch  prediction newVar    ID  \\\n0        2      2  female  29.00    0.0    0.0    0.944861   None     1   \n1        2      2    male   0.92    1.0    2.0    0.783519   None     2   \n2        2      2  female   2.00    1.0    2.0    0.978557   None     3   \n3        2      2    male  30.00    1.0    2.0    0.516082   None     4   \n4        2      2  female  25.00    1.0    2.0    0.945537   None     5   \n5      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1047   \n6      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1048   \n7      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1049   \n8      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1050   \n9      NaN    NaN     NaN    NaN    NaN    NaN         NaN    NaN  1051   \n\n   newVar1  newVar2 factorVar  numericVar  integerVar characterVar  cat  \n0      1.0      0.0    female    0.944861         0.0       female    0  \n1      0.0      1.0      male    0.783519         2.0         male    0  \n2      1.0      0.0    female    0.978557         2.0       female    1  \n3      0.0      1.0      male    0.516082         2.0         male    1  \n4      1.0      0.0    female    0.945537         2.0       female    1  \n5      NaN      NaN       NaN         NaN         NaN          NaN    0  \n6      NaN      NaN       NaN         NaN         NaN          NaN    1  \n7      NaN      NaN       NaN         NaN         NaN          NaN    1  \n8      NaN      NaN       NaN         NaN         NaN          NaN    1  \n9      NaN      NaN       NaN         NaN         NaN          NaN    0  \n(10, 16)\n\n\n\n\n17.3.5 Inner Join\nAn inner join includes all rows that are in both \\(x\\) and \\(y\\). An inner join will return one row of \\(x\\) for each matching row of \\(y\\), and can duplicate values of records on either side (left or right) if \\(x\\) and \\(y\\) have more than one matching record. It returns columns from \\(x\\) and \\(y\\). Here is how to merge two data frames using an inner join:\n\ninnerJoinData = pd.merge(mydata, mydata2, on = \"ID\", how = \"inner\")\n\nprint(innerJoinData)\nprint(innerJoinData.shape)\n\n  survived pclass     sex    age  sibsp  parch  prediction newVar  ID  \\\n0        2      2  female  29.00      0    0.0    0.944861   None   1   \n1        2      2    male   0.92      1    2.0    0.783519   None   2   \n2        2      2  female   2.00      1    2.0    0.978557   None   3   \n3        2      2    male  30.00      1    2.0    0.516082   None   4   \n4        2      2  female  25.00      1    2.0    0.945537   None   5   \n\n   newVar1  newVar2 factorVar  numericVar  integerVar characterVar  cat  \n0      1.0      0.0    female    0.944861           0       female    0  \n1      0.0      1.0      male    0.783519           2         male    0  \n2      1.0      0.0    female    0.978557           2       female    1  \n3      0.0      1.0      male    0.516082           2         male    1  \n4      1.0      0.0    female    0.945537           2       female    1  \n(5, 16)\n\n\n\n\n17.3.6 Cross Join\nA cross join combines each row in \\(x\\) with each row in \\(y\\).\n\nrater = pd.DataFrame({'rater': [\"Mother\",\"Father\",\"Teacher\"]})\ntimepoint = pd.DataFrame({'timepoint': range(1, 4)})\n\ncrossJoinData = rater.assign(key = 1).merge(timepoint.assign(key = 1), on = 'key').drop('key', axis = 1)\n\nprint(crossJoinData)\nprint(crossJoinData.shape)\n\n     rater  timepoint\n0   Mother          1\n1   Mother          2\n2   Mother          3\n3   Father          1\n4   Father          2\n5   Father          3\n6  Teacher          1\n7  Teacher          2\n8  Teacher          3\n(9, 2)"
   }
 ]
