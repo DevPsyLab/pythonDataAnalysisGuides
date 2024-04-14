@@ -11,13 +11,13 @@
     "href": "index.html",
     "title": "Website",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Data Management"
   },
   {
     "objectID": "dataManagement.html",
     "href": "dataManagement.html",
     "title": "Data Management",
     "section": "",
-    "text": "1 Import Data\nImporting data takes syntax of the following form for .csv files:\n\nimport pandas as pd\n\ndata = pd.read_csv(\"filepath/filename.csv\")"
+    "text": "1 Import Data\nImporting data using pandas takes syntax of the following form for .csv files:\n\nimport pandas as pd\n\ndata = pd.read_csv(\"filepath/filename.csv\")\n\nBelow, I import a .csv file and save it into an object called mydata (you could call this object whatever you want):\n\nimport pandas as pd\n\ndata = pd.read_csv(\"https://osf.io/s6wrm/download\")"
   }
 ]
