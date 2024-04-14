@@ -1,7 +1,7 @@
 # Quarto Website Template
 
 This is the code that creates the Python Data Analysis Guides.
-The Quarto Website Template is located here: **https://devpsylab.github.io/pythonDataAnalysisGuide**
+The Quarto Website Template is located here: **https://devpsylab.github.io/pythonDataAnalysisGuides**
 
 # License
 
