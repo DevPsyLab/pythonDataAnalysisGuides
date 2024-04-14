@@ -26,7 +26,7 @@ import moduleName2
 
 For example:
 
-```{r}
+```{python}
 import math
 import random
 import collections
