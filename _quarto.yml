@@ -11,6 +11,10 @@ website:
         menu:
         - text: Data Management
           href: dataManagement.qmd
+        - text: Django
+          href: django.qmd
+        - text: Python
+          href: python.qmd
       - text: Links
         menu:
         - text: Lab Wiki

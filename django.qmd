@@ -1,0 +1,38 @@
+---
+title: "Django"
+execute:
+  echo: true
+  error: true
+  code-fold: true
+jupyter: python3
+format:
+  html:
+    code-fold: false
+    code-tools:
+      source: true
+      toggle: true
+---
+
+# Overview of `Django`
+
+`Django` is a web framework used in `Python`.
+
+# Install `Django`
+
+In terminal:
+
+```{python}
+#| eval: false
+
+python3 -m pip install Django==5.0.4 # install Django on Mac
+py -m pip install Django==5.0.4 # install Django on Windows
+```
+
+Verify installation:
+
+```{python}
+#| eval: false
+
+python3 -m django --version # gets Django version
+```
+

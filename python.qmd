@@ -1,0 +1,31 @@
+---
+title: "Python"
+---
+
+# Resources for Learning
+
+- https://www.linkedin.com/learning/
+- https://www.w3schools.com/python/default.asp
+- https://www.tutorialspoint.com/python/index.htm
+- https://www.pythoncheatsheet.org
+
+# PC vs Mac
+
+For terminal commands on Mac, use `python3`.
+For terminal commands on PC, use `python` or `py`.
+
+# Install Python
+
+Download and install the latest version of `Python`: https://www.python.org/downloads/
+
+Verify installation:
+
+```{python}
+#| eval: false
+
+python3 -V # gets Python version
+```
+
+# Install `Anaconda` for Package Management
+
+https://www.anaconda.com/download
