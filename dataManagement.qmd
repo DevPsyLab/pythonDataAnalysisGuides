@@ -3,7 +3,6 @@ title: "Data Management"
 execute:
   echo: true
   error: true
-  code-fold: true
 jupyter: python3
 format:
   html:

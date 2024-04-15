@@ -3,7 +3,6 @@ title: "Django"
 execute:
   echo: true
   error: true
-  code-fold: true
 jupyter: python3
 format:
   html:
@@ -16,6 +15,10 @@ format:
 # Overview of `Django`
 
 `Django` is a web framework used in `Python`.
+
+# `Django` Documentation
+
+<https://docs.djangoproject.com>
 
 # Install `Django`
 
@@ -36,3 +39,16 @@ Verify installation:
 python3 -m django --version # gets Django version
 ```
 
+# Create a `Django` Project
+
+From the command line, **`cd`** into a directory where you’d like to store your code, then run the following command:
+
+```{python}
+#| eval: false
+
+django-admin startproject nameOfProject
+```
+
+This will create a "nameOfProject" directory in your current directory.
+
+# Create a `Django` App

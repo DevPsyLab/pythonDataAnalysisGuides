@@ -1,5 +1,15 @@
 ---
 title: "Python"
+execute:
+  echo: true
+  error: true
+jupyter: python3
+format:
+  html:
+    code-fold: false
+    code-tools:
+      source: true
+      toggle: true
 ---
 
 # Resources for Learning
