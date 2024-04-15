@@ -2,7 +2,7 @@
 title: "About This Website"
 ---
 
-The Python Data Analysis Guides were generated with [`Quarto`](https://quarto.org/) (archived at [https://perma.cc/9JWH-779Y](https://perma.cc/9JWH-779Y)).
+The Python Data Analysis Guides were generated with [`Quarto`](https://quarto.org/) (archived at <https://perma.cc/9JWH-779Y>).
 The codebase that was used to generate the Python Data Analysis Guides is located [here](https://github.com/DevPsyLab/pythonDataAnalysisGuides).
 
 # Contact

@@ -4,4 +4,4 @@ title: "Python Data Analysis Guides"
 
 - [Data Management](dataManagement.qmd)
 - [`Django`](django.qmd)
-- [`Python`](django.qmd)
+- [`Python`](python.qmd)

@@ -478,7 +478,7 @@ For instance, a left outer join keeps the shared rows and the rows that are uniq
 
 ![Types of merges/joins](images/joins.png)
 
-Image source: [Predictive Hacks](https://predictivehacks.com/?all-tips=anti-joins-with-pandas) (archived at: [https://perma.cc/WV7U-BS68](https://perma.cc/WV7U-BS68))
+Image source: [Predictive Hacks](https://predictivehacks.com/?all-tips=anti-joins-with-pandas) (archived at: <https://perma.cc/WV7U-BS68>)
 
 ### Full Outer Join {#fullJoin}
 
