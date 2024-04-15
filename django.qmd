@@ -51,4 +51,96 @@ django-admin startproject nameOfProject
 
 This will create a "nameOfProject" directory in your current directory.
 
+# Project File Structure
+
+## `manage.py`
+
+- runs commands
+
+## `nameOfProject/__init__.py`
+
+- tells `Python` that the folder contains `Python` code
+
+## `nameOfProject/wsgi.py` and `nameOfProject/asgi.py`
+
+- provide hooks for web servers when `Django` is running on a live website
+
+## `nameOfProject/settings.py`
+
+- configures the `Django` project
+
+## `nameOfProject/urls.py`
+
+- routes web requests based on the URL
+
 # Create a `Django` App
+
+A `Django` app is a component in a `Django` project.
+It has a folder with a set of `Python` files.
+Each `Django` app has a specific purpose.
+Each `Django` project may have one or many `Django` apps.
+
+Examples of `Django` apps include:
+
+- blog
+- forum
+- wiki
+
+To create a `Django` app, **`cd`** into the project folder type the following:
+
+```{python}
+#| eval: false
+
+python3 manage.py startapp nameOfApp
+```
+
+This will create the "nameOfApp" folder and files for the app.
+
+Then, add app to the `Installed_Apps` section of `settings.py`:
+
+`nameOfApp`
+
+# App File Structure
+
+## `apps.py`
+
+- controls settings that are specific to the app
+
+## `models.py`
+
+- provides the data layer, which is used to create the database schema and queries
+
+## `admin.py`
+
+- defines an administrative interface for the app that will allow us to see and edit the data
+
+## `urls.py`
+
+- URL routing specific to this app
+
+## `views.py`
+
+- defines the logic and control flow for handling requests
+- defines the `HTTP` requests that are returned
+
+## `tests.py`
+
+- unit tests for testing app functionality
+
+## `migrations/`
+
+- holds files for migrating the database as we create and change the database schema over time
+
+# Run `Django` Project
+
+```{python}
+#| eval: false
+
+python3 manage.py runserver
+```
+
+# View in Browser
+
+<http://127.0.0.1:8000>
+
+`localhost:8000`
