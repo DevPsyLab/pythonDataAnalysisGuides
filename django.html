@@ -228,6 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#run-django-project" id="toc-run-django-project" class="nav-link" data-scroll-target="#run-django-project"><span class="header-section-number">9</span> Run <code>Django</code> Project</a></li>
   <li><a href="#view-in-browser" id="toc-view-in-browser" class="nav-link" data-scroll-target="#view-in-browser"><span class="header-section-number">10</span> View in Browser</a></li>
   <li><a href="#django-admin-console" id="toc-django-admin-console" class="nav-link" data-scroll-target="#django-admin-console"><span class="header-section-number">11</span> <code>Django</code> Admin Console</a></li>
+  <li><a href="#database" id="toc-database" class="nav-link" data-scroll-target="#database"><span class="header-section-number">12</span> Database</a></li>
   </ul>
 </nav>
     </div>
@@ -264,19 +265,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="install-django" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Install <code>Django</code></h1>
 <p>In terminal:</p>
-<div id="536685f2" class="cell" data-execution_count="1">
+<div id="bb231636" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>python3 <span class="op">-</span>m pip install Django<span class="op">==</span><span class="fl">5.0.4</span> <span class="co"># install Django on Mac</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>py <span class="op">-</span>m pip install Django<span class="op">==</span><span class="fl">5.0.4</span> <span class="co"># install Django on Windows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Verify installation:</p>
-<div id="22134e2d" class="cell" data-execution_count="2">
+<div id="c66de59e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>python3 <span class="op">-</span>m django <span class="op">--</span>version <span class="co"># gets Django version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-a-django-project" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Create a <code>Django</code> Project</h1>
 <p>From the command line, <strong><code>cd</code></strong> into a directory where you’d like to store your code, then run the following command:</p>
-<div id="911c99be" class="cell" data-execution_count="3">
+<div id="424afb82" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>django<span class="op">-</span>admin startproject nameOfProject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will create a “nameOfProject” directory in your current directory.</p>
@@ -324,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>wiki</li>
 </ul>
 <p>To create a <code>Django</code> app, <strong><code>cd</code></strong> into the project folder type the following:</p>
-<div id="5a2a26b5" class="cell" data-execution_count="4">
+<div id="eacaa715" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py startapp nameOfApp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will create the “nameOfApp” folder and files for the app.</p>
@@ -379,25 +380,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="update-migrations" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> Update Migrations</h1>
-<div id="6cee7bf7" class="cell" data-execution_count="5">
+<div id="e100044a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py makemigrations</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>python3 manage.py migrate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="run-django-project" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Run <code>Django</code> Project</h1>
-<div id="d55c397e" class="cell" data-execution_count="6">
+<div id="f76c4c12" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="view-in-browser" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> View in Browser</h1>
 <p><a href="http://127.0.0.1:8000" class="uri">http://127.0.0.1:8000</a></p>
-<p><code>localhost:8000</code></p>
+<p><a href="http://localhost:8000" class="uri">http://localhost:8000</a></p>
 </section>
 <section id="django-admin-console" class="level1" data-number="11">
 <h1 data-number="11"><span class="header-section-number">11</span> <code>Django</code> Admin Console</h1>
 <p><a href="http://127.0.0.1:8000/admin" class="uri">http://127.0.0.1:8000/admin</a></p>
+</section>
+<section id="database" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Database</h1>
+<p><a href="http://localhost" class="uri">http://localhost</a></p>
 
 
 <!-- -->
@@ -1049,11 +1054,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://127.0.0.1:8000&gt;</span></span>
 <span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="in">`localhost:8000`</span></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://localhost:8000&gt;</span></span>
 <span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="fu"># `Django` Admin Console</span></span>
 <span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://127.0.0.1:8000/admin&gt;</span></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="fu"># Database</span></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://localhost&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
