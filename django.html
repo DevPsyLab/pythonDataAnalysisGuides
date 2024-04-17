@@ -266,19 +266,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="install-django" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Install <code>Django</code></h1>
 <p>In terminal:</p>
-<div id="d0b0ecbf" class="cell" data-execution_count="1">
+<div id="a4be6df8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>python3 <span class="op">-</span>m pip install Django<span class="op">==</span><span class="fl">5.0.4</span> <span class="co"># install Django on Mac</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>py <span class="op">-</span>m pip install Django<span class="op">==</span><span class="fl">5.0.4</span> <span class="co"># install Django on Windows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Verify installation:</p>
-<div id="6b129777" class="cell" data-execution_count="2">
+<div id="bc4c12d0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>python3 <span class="op">-</span>m django <span class="op">--</span>version <span class="co"># gets Django version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-a-django-project" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Create a <code>Django</code> Project</h1>
 <p>From the command line, <strong><code>cd</code></strong> into a directory where you’d like to store your code, then run the following command:</p>
-<div id="a708bfcf" class="cell" data-execution_count="3">
+<div id="7f965f3f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>django<span class="op">-</span>admin startproject nameOfProject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will create a “nameOfProject” directory in your current directory.</p>
@@ -326,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>wiki</li>
 </ul>
 <p>To create a <code>Django</code> app, <strong><code>cd</code></strong> into the project folder type the following:</p>
-<div id="95f00329" class="cell" data-execution_count="4">
+<div id="3825117f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py startapp nameOfApp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will create the “nameOfApp” folder and files for the app.</p>
@@ -381,30 +381,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="remove-migrations" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> Remove Migrations</h1>
-<div id="d0ccb274" class="cell" data-execution_count="5">
+<div id="0f07db71" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py migrate zero <span class="co"># can insert appname before 'zero'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="update-migrations" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Update Migrations</h1>
-<div id="f3304a8d" class="cell" data-execution_count="6">
+<div id="2ef027cd" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py makemigrations <span class="co"># can insert appname after 'makemigrations'</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>python3 manage.py migrate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="run-django-project" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> Run <code>Django</code> Project</h1>
-<div id="8331adb6" class="cell" data-execution_count="7">
+<div id="f787a692" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py runserver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="view-in-browser" class="level1" data-number="11">
 <h1 data-number="11"><span class="header-section-number">11</span> View in Browser</h1>
-<p><a href="http://127.0.0.1:8000" class="uri">http://127.0.0.1:8000</a></p>
 <p><a href="http://localhost:8000" class="uri">http://localhost:8000</a></p>
+<p><a href="http://127.0.0.1:8000" class="uri">http://127.0.0.1:8000</a></p>
 </section>
 <section id="django-admin-console" class="level1" data-number="12">
 <h1 data-number="12"><span class="header-section-number">12</span> <code>Django</code> Admin Console</h1>
+<p><a href="http://localhost:8000/admin" class="uri">http://localhost:8000/admin</a></p>
 <p><a href="http://127.0.0.1:8000/admin" class="uri">http://127.0.0.1:8000/admin</a></p>
 </section>
 <section id="database" class="level1" data-number="13">
@@ -1067,17 +1068,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a><span class="fu"># View in Browser</span></span>
 <span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://127.0.0.1:8000&gt;</span></span>
+<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://localhost:8000&gt;</span></span>
 <span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://localhost:8000&gt;</span></span>
+<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://127.0.0.1:8000&gt;</span></span>
 <span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a><span class="fu"># `Django` Admin Console</span></span>
 <span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://127.0.0.1:8000/admin&gt;</span></span>
+<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://localhost:8000/admin&gt;</span></span>
 <span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="fu"># Database</span></span>
+<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://127.0.0.1:8000/admin&gt;</span></span>
 <span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://localhost&gt;</span></span>
+<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="fu"># Database</span></span>
+<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;http://localhost&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
