@@ -131,12 +131,20 @@ Then, add app to the `Installed_Apps` section of `settings.py`:
 
 - holds files for migrating the database as we create and change the database schema over time
 
+# Remove Migrations
+
+```{python}
+#| eval: false
+
+python3 manage.py migrate zero # can insert appname before 'zero'
+```
+
 # Update Migrations
 
 ```{python}
 #| eval: false
 
-python3 manage.py makemigrations
+python3 manage.py makemigrations # can insert appname after 'makemigrations'
 python3 manage.py migrate
 ```
 
