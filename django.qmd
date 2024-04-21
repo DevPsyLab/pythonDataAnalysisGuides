@@ -16,6 +16,104 @@ format:
 
 `Django` is a web framework used in `Python`.
 
+## Architecture
+
+`Django` uses a Model-View-Controller architecture.
+
+### URL Patterns {#urlPatterns}
+
+The URL patterns determine which [view](#views) to pass the request to for handling.
+URL patterns are defined in `urls.py`.
+
+### Views {#views}
+
+Views provide the logic or control flow portion of the project.
+A view is a `Python` callable, such as a function that takes an `HTTP` request as an argument and returns an `HTTP` response for the web server to return.
+Each view we define can leverage [models](#models) and [templates](#templates).
+Views are defined in `views.py`.
+
+### Models {#models}
+
+To perform queries against the database, each [view](#views) can leverage `Django` models as needed.
+A `Django` model is a class with attributes.
+These model classes provide built-in methods for making queries on the associated database tables. 
+Each model is a database table (i.e., spreadsheet).
+A model defines database fields (i.e., database columns/variables) as class attributes.
+Each database record is a row in the spreadsheet
+Models create the data layer of a `Django` app, by defining the schema or underlying structure of a database table.
+Models are defined in `models.py`.
+
+#### Defining Fields {#fields}
+
+Fields are columns/variables in the database table that are defined by [models](#models).
+Field types and field options are provided in the `Django` documentation here: https://docs.djangoproject.com/en/5.0/ref/models/fields/
+
+Examples of field types include:
+
+| Type        | Field           | Example Values                             | Notes                         |
+|-------------|-----------------|--------------------------------------------| ------------------------------|
+| Character   | CharField       | "This is a string"                         | requires max_length attribute |
+| Text        | TextField       | "This field is for large amounts of text." | Length of text is unbounded   |
+| Email       | EmailField      | test@test.com                              |                               |
+| URL         | URLField        | www.example.com                            |                               |
+| Integer     | IntegerField    | 71                                         |                               |
+| Decimal     | DecimalField    | 71.03                                      |                               |
+| Boolean     | BooleanField    | True, False                                |                               |
+| DateTime    | DateTimeField   | datetime(1960, 1, 1, 8, 0, 0)              |                               |
+| Foreign Key | ForeignKey      | 1                                          | id of record in another table; relates a single database record of one model to that of a different model |
+| ManyToMany  | ManyToManyField | NA                                         | relates a given record to many records of another model |
+
+`id` is an automatically generated field for all tables that Django manages.
+
+Common field attributes:
+
+- `max_length`: integer; defines maximum length of a `CharField`
+- `blank`: True or False; determines whether a field is (not) required; with an integer field, the submission of a blank field is recorded as zero, which is indistinguishable from a value of zero; if you want to specify the value as unknown, specify `null`
+- `null`: True or False; determines whether a field can be stored as a null (i.e., there is no data for that field in a given record)
+- `choices`: limits the values that can be stored in that field to a set of choices that are provided
+
+#### Migrations {#migrations}
+
+Migrations create the necessary scripts to change the database structure through time as we update our code to change our models.
+
+A migration is needed when any of the following occur:
+
+  - a model is added
+  - a field is added, removed, or changed (from an existing model)
+
+When a new model is created, a migration creates the corresponding database table.
+Migrations are also needed when a field is added or removed from an existing model, or, when attributes of a field have changed.
+All of these changes to a model's file need a corresponding change to the database, and for these purposes migrations need to be created, and then run.
+
+The first migration created for a new `Django` app will create tables for the models that are defined.
+These migrations are called "initial migrations".
+
+The commands for working with migrations are:
+
+- `makemigrations`: e.g., `python3 manage.py makemigrations`
+- `showmigrations`: e.g., `python3 manage.py showmigrations`
+- `migrate`: e.g., `python3 manage.py migrate`
+
+The `makemigrations` command generates migration files for later use.
+It reads the current model's file and inspects the current state of the database to determine what changes need to be made to make the database structure match the model's file.
+Those files are placed in the migration's folder of the corresponding app, and are automatically numbered, starting with one.
+Therefore, the initial migration will be named starting with one.
+
+The `showmigrations` command shows which migrations exist for the app, and which have not yet been run (empty brackets indicate the migration has not been run; an "X" in brackets indicates that the migration has been run).
+
+The `migrate` command runs all the generated migrations that have not yet run.
+We can also run migrations for a specific app to a specific number of migration, by using the migrate command with an app name and a number.
+
+When a migration has been created, but not yet run, we call this an "unapplied migration".
+This is a common source of errors during development, especially when collaborating with other developers.
+With this in mind, be sure that when working on a team, to coordinate carefully who is changing which model, and to look for new migration files when pulling in code changes.
+
+### Templates {#templates}
+
+Each view we define can also leverage templates, which help with the presentation layer of what the `HTML` response will look like.
+Each template is a separate file that consists of `HTML` along with some extra template syntax for variables, loops, and other control flow.
+Template files are saved in a folder called templates.
+
 # `Django` Documentation
 
 <https://docs.djangoproject.com>
@@ -148,6 +246,14 @@ python3 manage.py makemigrations # can insert appname after 'makemigrations'
 python3 manage.py migrate
 ```
 
+# Run `Django` Commands
+
+```{python}
+#| eval: false
+
+python3 manage.py NAME_OF_COMMAND
+```
+
 # Run `Django` Project
 
 ```{python}
@@ -171,3 +277,14 @@ python3 manage.py runserver
 # Database
 
 <http://localhost>
+
+```{python}
+#| eval: false
+
+python3 manage.py createsuperuser
+```
+
+# Troubleshooting
+
+- `Django` module not found
+    - Make sure `Django` is installed; if so, change `python3` to `python` in the commands (or vice versa)
