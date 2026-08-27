@@ -442,7 +442,6 @@ Multiple variables:
 ```{python}
 mydata[['age', 'parch', 'prediction']] = mydata[['age', 'parch', 'prediction']].astype(float)
 
-mydata.loc[:, 'age':'parch'] = mydata.loc[:, 'age':'parch'].astype(float)
 
 # Convert all categorical columns to string
 for col in mydata.select_dtypes('category').columns:
