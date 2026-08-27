@@ -17,21 +17,18 @@ format:
 Terminal/command prompt:
 
 ```bash
-
 pip install numpy pandas matplotlib seaborn
 ```
 
 Jupyter:
 
 ```bash
-
 %pip install numpy pandas matplotlib seaborn
 ```
 
 Anaconda:
 
 ```bash
-
 conda install numpy pandas matplotlib seaborn
 ```
 
