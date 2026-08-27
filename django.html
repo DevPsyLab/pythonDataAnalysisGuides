@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -74,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e3adbaa939bcd423dddc8c8a834270b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -210,10 +213,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture"><span class="header-section-number">1.1</span> Architecture</a>
   <ul class="collapse">
-  <li><a href="#urlPatterns" id="toc-urlPatterns" class="nav-link" data-scroll-target="#urlPatterns"><span class="header-section-number">1.1.1</span> URL Patterns</a></li>
-  <li><a href="#views" id="toc-views" class="nav-link" data-scroll-target="#views"><span class="header-section-number">1.1.2</span> Views</a></li>
-  <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models"><span class="header-section-number">1.1.3</span> Models</a></li>
-  <li><a href="#templates" id="toc-templates" class="nav-link" data-scroll-target="#templates"><span class="header-section-number">1.1.4</span> Templates</a></li>
+  <li><a href="#sec-urlPatterns" id="toc-sec-urlPatterns" class="nav-link" data-scroll-target="#sec-urlPatterns"><span class="header-section-number">1.1.1</span> URL Patterns</a></li>
+  <li><a href="#sec-views" id="toc-sec-views" class="nav-link" data-scroll-target="#sec-views"><span class="header-section-number">1.1.2</span> Views</a></li>
+  <li><a href="#sec-models" id="toc-sec-models" class="nav-link" data-scroll-target="#sec-models"><span class="header-section-number">1.1.3</span> Models</a></li>
+  <li><a href="#sec-templates" id="toc-sec-templates" class="nav-link" data-scroll-target="#sec-templates"><span class="header-section-number">1.1.4</span> Templates</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#django-documentation" id="toc-django-documentation" class="nav-link" data-scroll-target="#django-documentation"><span class="header-section-number">2</span> <code>Django</code> Documentation</a></li>
@@ -236,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#urls.py" id="toc-urls.py" class="nav-link" data-scroll-target="#urls.py"><span class="header-section-number">7.4</span> <code>urls.py</code></a></li>
   <li><a href="#views.py" id="toc-views.py" class="nav-link" data-scroll-target="#views.py"><span class="header-section-number">7.5</span> <code>views.py</code></a></li>
   <li><a href="#tests.py" id="toc-tests.py" class="nav-link" data-scroll-target="#tests.py"><span class="header-section-number">7.6</span> <code>tests.py</code></a></li>
-  <li><a href="#migrations-1" id="toc-migrations-1" class="nav-link" data-scroll-target="#migrations-1"><span class="header-section-number">7.7</span> <code>migrations/</code></a></li>
+  <li><a href="#migrations" id="toc-migrations" class="nav-link" data-scroll-target="#migrations"><span class="header-section-number">7.7</span> <code>migrations/</code></a></li>
   </ul></li>
   <li><a href="#remove-migrations" id="toc-remove-migrations" class="nav-link" data-scroll-target="#remove-migrations"><span class="header-section-number">8</span> Remove Migrations</a></li>
   <li><a href="#update-migrations" id="toc-update-migrations" class="nav-link" data-scroll-target="#update-migrations"><span class="header-section-number">9</span> Update Migrations</a></li>
@@ -278,20 +281,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="architecture" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="architecture"><span class="header-section-number">1.1</span> Architecture</h2>
 <p><code>Django</code> uses a Model-View-Controller architecture.</p>
-<section id="urlPatterns" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="urlPatterns"><span class="header-section-number">1.1.1</span> URL Patterns</h3>
-<p>The URL patterns determine which <a href="#views">view</a> to pass the request to for handling. URL patterns are defined in <code>urls.py</code>.</p>
+<section id="sec-urlPatterns" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="sec-urlPatterns"><span class="header-section-number">1.1.1</span> URL Patterns</h3>
+<p>The URL patterns determine which <a href="#sec-views">view</a> to pass the request to for handling. URL patterns are defined in <code>urls.py</code>.</p>
 </section>
-<section id="views" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="views"><span class="header-section-number">1.1.2</span> Views</h3>
-<p>Views provide the logic or control flow portion of the project. A view is a <code>Python</code> callable, such as a function that takes an <code>HTTP</code> request as an argument and returns an <code>HTTP</code> response for the web server to return. Each view we define can leverage <a href="#models">models</a> and <a href="#templates">templates</a>. Views are defined in <code>views.py</code>.</p>
+<section id="sec-views" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="sec-views"><span class="header-section-number">1.1.2</span> Views</h3>
+<p>Views provide the logic or control flow portion of the project. A view is a <code>Python</code> callable, such as a function that takes an <code>HTTP</code> request as an argument and returns an <code>HTTP</code> response for the web server to return. Each view we define can leverage <a href="#sec-models">models</a> and <a href="#sec-templates">templates</a>. Views are defined in <code>views.py</code>.</p>
 </section>
-<section id="models" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="models"><span class="header-section-number">1.1.3</span> Models</h3>
-<p>To perform queries against the database, each <a href="#views">view</a> can leverage <code>Django</code> models as needed. A <code>Django</code> model is a class with attributes. These model classes provide built-in methods for making queries on the associated database tables. Each model is a database table (i.e., spreadsheet). A model defines database fields (i.e., database columns/variables) as class attributes. Each database record is a row in the spreadsheet Models create the data layer of a <code>Django</code> app, by defining the schema or underlying structure of a database table. Models are defined in <code>models.py</code>.</p>
-<section id="fields" class="level4" data-number="1.1.3.1">
-<h4 data-number="1.1.3.1" class="anchored" data-anchor-id="fields"><span class="header-section-number">1.1.3.1</span> Defining Fields</h4>
-<p>Fields are columns/variables in the database table that are defined by <a href="#models">models</a>. Field types and field options are provided in the <code>Django</code> documentation here: https://docs.djangoproject.com/en/5.0/ref/models/fields/</p>
+<section id="sec-models" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="sec-models"><span class="header-section-number">1.1.3</span> Models</h3>
+<p>To perform queries against the database, each <a href="#sec-views">view</a> can leverage <code>Django</code> models as needed. A <code>Django</code> model is a class with attributes. These model classes provide built-in methods for making queries on the associated database tables. Each model is a database table (i.e., spreadsheet). A model defines database fields (i.e., database columns/variables) as class attributes. Each database record is a row in the spreadsheet Models create the data layer of a <code>Django</code> app, by defining the schema or underlying structure of a database table. Models are defined in <code>models.py</code>.</p>
+<section id="sec-fields" class="level4" data-number="1.1.3.1">
+<h4 data-number="1.1.3.1" class="anchored" data-anchor-id="sec-fields"><span class="header-section-number">1.1.3.1</span> Defining Fields</h4>
+<p>Fields are columns/variables in the database table that are defined by <a href="#sec-models">models</a>. Field types and field options are provided in the <code>Django</code> documentation here: https://docs.djangoproject.com/en/5.0/ref/models/fields/</p>
 <p>Examples of field types include:</p>
 <table class="caption-top table">
 <colgroup>
@@ -380,8 +383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>choices</code>: limits the values that can be stored in that field to a set of choices that are provided</li>
 </ul>
 </section>
-<section id="migrations" class="level4" data-number="1.1.3.2">
-<h4 data-number="1.1.3.2" class="anchored" data-anchor-id="migrations"><span class="header-section-number">1.1.3.2</span> Migrations</h4>
+<section id="sec-migrations" class="level4" data-number="1.1.3.2">
+<h4 data-number="1.1.3.2" class="anchored" data-anchor-id="sec-migrations"><span class="header-section-number">1.1.3.2</span> Migrations</h4>
 <p>Migrations create the necessary scripts to change the database structure through time as we update our code to change our models.</p>
 <p>A migration is needed when any of the following occur:</p>
 <ul>
@@ -402,8 +405,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When a migration has been created, but not yet run, we call this an “unapplied migration”. This is a common source of errors during development, especially when collaborating with other developers. With this in mind, be sure that when working on a team, to coordinate carefully who is changing which model, and to look for new migration files when pulling in code changes.</p>
 </section>
 </section>
-<section id="templates" class="level3" data-number="1.1.4">
-<h3 data-number="1.1.4" class="anchored" data-anchor-id="templates"><span class="header-section-number">1.1.4</span> Templates</h3>
+<section id="sec-templates" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="sec-templates"><span class="header-section-number">1.1.4</span> Templates</h3>
 <p>Each view we define can also leverage templates, which help with the presentation layer of what the <code>HTML</code> response will look like. Each template is a separate file that consists of <code>HTML</code> along with some extra template syntax for variables, loops, and other control flow. Template files are saved in a folder called templates.</p>
 </section>
 </section>
@@ -415,19 +418,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="install-django" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Install <code>Django</code></h1>
 <p>In terminal:</p>
-<div id="b217daad" class="cell" data-execution_count="1">
+<div id="125df50b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>python3 <span class="op">-</span>m pip install Django<span class="op">==</span><span class="fl">5.0.4</span> <span class="co"># install Django on Mac</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>py <span class="op">-</span>m pip install Django<span class="op">==</span><span class="fl">5.0.4</span> <span class="co"># install Django on Windows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Verify installation:</p>
-<div id="1c6b0f1e" class="cell" data-execution_count="2">
+<div id="bbbe73f2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>python3 <span class="op">-</span>m django <span class="op">--</span>version <span class="co"># gets Django version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="create-a-django-project" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Create a <code>Django</code> Project</h1>
 <p>From the command line, <strong><code>cd</code></strong> into a directory where you’d like to store your code, then run the following command:</p>
-<div id="37e46900" class="cell" data-execution_count="3">
+<div id="59ca189b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>django<span class="op">-</span>admin startproject nameOfProject</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This will create a “nameOfProject” directory in your current directory.</p>
@@ -475,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>wiki</li>
 </ul>
 <p>To create a <code>Django</code> app, <strong><code>cd</code></strong> into the project folder type the following:</p>
-<div id="4b35e47f" class="cell" data-execution_count="4">
+<div id="e221f2df" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py startapp nameOfApp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This will create the “nameOfApp” folder and files for the app.</p>
@@ -521,8 +524,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>unit tests for testing app functionality</li>
 </ul>
 </section>
-<section id="migrations-1" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="migrations-1"><span class="header-section-number">7.7</span> <code>migrations/</code></h2>
+<section id="migrations" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="migrations"><span class="header-section-number">7.7</span> <code>migrations/</code></h2>
 <ul>
 <li>holds files for migrating the database as we create and change the database schema over time</li>
 </ul>
@@ -530,26 +533,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="remove-migrations" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> Remove Migrations</h1>
-<div id="1e719ca4" class="cell" data-execution_count="5">
+<div id="399b206d" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py migrate zero <span class="co"># can insert appname before 'zero'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="update-migrations" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Update Migrations</h1>
-<div id="ab512508" class="cell" data-execution_count="6">
+<div id="c6eeb7ea" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py makemigrations <span class="co"># can insert appname after 'makemigrations'</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>python3 manage.py migrate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="run-django-commands" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> Run <code>Django</code> Commands</h1>
-<div id="0a9b6ead" class="cell" data-execution_count="7">
+<div id="f885b78e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py NAME_OF_COMMAND</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="run-django-project" class="level1" data-number="11">
 <h1 data-number="11"><span class="header-section-number">11</span> Run <code>Django</code> Project</h1>
-<div id="6a0035af" class="cell" data-execution_count="8">
+<div id="f5458b9e" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py runserver</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -566,14 +569,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="query-database-with-orm" class="level1" data-number="14">
 <h1 data-number="14"><span class="header-section-number">14</span> Query Database with ORM</h1>
 <p>Object-Relational Mapper (ORM)</p>
-<div id="7f9f7f73" class="cell" data-execution_count="9">
+<div id="1afa0241" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py shell</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="database" class="level1" data-number="15">
 <h1 data-number="15"><span class="header-section-number">15</span> Database</h1>
 <p><a href="http://localhost" class="uri">http://localhost</a></p>
-<div id="67983958" class="cell" data-execution_count="10">
+<div id="99459864" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>python3 manage.py createsuperuser</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -709,16 +712,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -1095,21 +1098,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="in">`Django`</span> uses a Model-View-Controller architecture.</span>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### URL Patterns {#urlPatterns}</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### URL Patterns {#sec-urlPatterns}</span></span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>The URL patterns determine which <span class="co">[</span><span class="ot">view</span><span class="co">](#views)</span> to pass the request to for handling.</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>The URL patterns determine which <span class="co">[</span><span class="ot">view</span><span class="co">](#sec-views)</span> to pass the request to for handling.</span>
 <span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>URL patterns are defined in <span class="in">`urls.py`</span>.</span>
 <span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Views {#views}</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Views {#sec-views}</span></span>
 <span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>Views provide the logic or control flow portion of the project.</span>
 <span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>A view is a <span class="in">`Python`</span> callable, such as a function that takes an <span class="in">`HTTP`</span> request as an argument and returns an <span class="in">`HTTP`</span> response for the web server to return.</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>Each view we define can leverage <span class="co">[</span><span class="ot">models</span><span class="co">](#models)</span> and <span class="co">[</span><span class="ot">templates</span><span class="co">](#templates)</span>.</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>Each view we define can leverage <span class="co">[</span><span class="ot">models</span><span class="co">](#sec-models)</span> and <span class="co">[</span><span class="ot">templates</span><span class="co">](#sec-templates)</span>.</span>
 <span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>Views are defined in <span class="in">`views.py`</span>.</span>
 <span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### Models {#models}</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### Models {#sec-models}</span></span>
 <span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>To perform queries against the database, each <span class="co">[</span><span class="ot">view</span><span class="co">](#views)</span> can leverage <span class="in">`Django`</span> models as needed.</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>To perform queries against the database, each <span class="co">[</span><span class="ot">view</span><span class="co">](#sec-views)</span> can leverage <span class="in">`Django`</span> models as needed.</span>
 <span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>A <span class="in">`Django`</span> model is a class with attributes.</span>
 <span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>These model classes provide built-in methods for making queries on the associated database tables. </span>
 <span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>Each model is a database table (i.e., spreadsheet).</span>
@@ -1118,9 +1121,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>Models create the data layer of a <span class="in">`Django`</span> app, by defining the schema or underlying structure of a database table.</span>
 <span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>Models are defined in <span class="in">`models.py`</span>.</span>
 <span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Defining Fields {#fields}</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Defining Fields {#sec-fields}</span></span>
 <span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>Fields are columns/variables in the database table that are defined by <span class="co">[</span><span class="ot">models</span><span class="co">](#models)</span>.</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>Fields are columns/variables in the database table that are defined by <span class="co">[</span><span class="ot">models</span><span class="co">](#sec-models)</span>.</span>
 <span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>Field types and field options are provided in the <span class="in">`Django`</span> documentation here: https://docs.djangoproject.com/en/5.0/ref/models/fields/</span>
 <span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>Examples of field types include:</span>
@@ -1147,7 +1150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`null`</span>: True or False; determines whether a field can be stored as a null (i.e., there is no data for that field in a given record)</span>
 <span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`choices`</span>: limits the values that can be stored in that field to a set of choices that are provided</span>
 <span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Migrations {#migrations}</span></span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Migrations {#sec-migrations}</span></span>
 <span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>Migrations create the necessary scripts to change the database structure through time as we update our code to change our models.</span>
 <span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a></span>
@@ -1183,7 +1186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>This is a common source of errors during development, especially when collaborating with other developers.</span>
 <span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a>With this in mind, be sure that when working on a team, to coordinate carefully who is changing which model, and to look for new migration files when pulling in code changes.</span>
 <span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a><span class="fu">### Templates {#templates}</span></span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a><span class="fu">### Templates {#sec-templates}</span></span>
 <span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a>Each view we define can also leverage templates, which help with the presentation layer of what the <span class="in">`HTML`</span> response will look like.</span>
 <span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a>Each template is a separate file that consists of <span class="in">`HTML`</span> along with some extra template syntax for variables, loops, and other control flow.</span>

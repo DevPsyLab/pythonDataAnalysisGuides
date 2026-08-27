@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/dataManagement.html</loc>
-    <lastmod>2026-05-02T15:04:29.192Z</lastmod>
-  </url>
-  <url>
-    <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/index.html</loc>
-    <lastmod>2026-05-02T15:04:29.205Z</lastmod>
+    <lastmod>2026-08-27T13:15:58.440Z</lastmod>
   </url>
   <url>
     <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/django.html</loc>
-    <lastmod>2026-05-02T15:04:29.192Z</lastmod>
+    <lastmod>2026-08-27T13:15:58.440Z</lastmod>
   </url>
   <url>
     <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/about.html</loc>
-    <lastmod>2026-05-02T15:04:29.192Z</lastmod>
+    <lastmod>2026-08-27T13:15:58.440Z</lastmod>
   </url>
   <url>
     <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/python.html</loc>
-    <lastmod>2026-05-02T15:04:29.205Z</lastmod>
+    <lastmod>2026-08-27T13:15:58.450Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/index.html</loc>
+    <lastmod>2026-08-27T13:15:58.450Z</lastmod>
   </url>
 </urlset>
