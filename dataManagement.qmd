@@ -12,7 +12,6 @@ format:
       toggle: true
 ---
 
-# Import Modules {#importModules}
 # Install Modules {#sec-installModules}
 
 Terminal/command prompt:
@@ -62,7 +61,7 @@ import pandas as pd
 import matplotlib.pyplot as pp
 ```
 
-# Import Data {#importData}
+# Import Data {#sec-importData}
 
 Importing data using `pandas` takes syntax of the following form for `.csv` files:
 
@@ -86,7 +85,7 @@ mydata = pd.read_csv("https://osf.io/s6wrm/download") # uses the pandas module
 mydata = pd.read_csv("data/titanic.csv") #https://osf.io/s6wrm/download
 ```
 
-# Save Data {#saveData}
+# Save Data {#sec-saveData}
 
 Saving data in Python takes syntax of the following form for `.csv` files:
 
@@ -104,7 +103,7 @@ For example:
 mydata.to_csv("mydata.csv", index = False)
 ```
 
-# Set a Seed {#seed}
+# Set a Seed {#sec-seed}
 
 Set a seed (any number) to reproduce the results of analyses that involve random number generation.
 
@@ -112,7 +111,7 @@ Set a seed (any number) to reproduce the results of analyses that involve random
 random.seed(52242) # uses the random module
 ```
 
-# Run a `Python` Script {#runScript}
+# Run a `Python` Script {#sec-runScript}
 
 To run a `Python` script, use the following syntax:
 
@@ -122,7 +121,7 @@ To run a `Python` script, use the following syntax:
 %run "filepath/filename.py"
 ```
 
-# Render a Quarto (`.qmd`) File {#renderQmd}
+# Render a Quarto (`.qmd`) File {#sec-renderQmd}
 
 To render a Quarto (`.qmd`) file, you would typically use the command line.
 Here is the equivalent command in a `Python` cell using the `!` operator to run shell commands:
@@ -133,7 +132,7 @@ Here is the equivalent command in a `Python` cell using the `!` operator to run 
 !quarto render "filepath/filename.qmd"
 ```
 
-# Variable Names {#varNames}
+# Variable Names {#sec-varNames}
 
 To look at the names of variables in a dataframe, use the following syntax:
 
@@ -141,7 +140,7 @@ To look at the names of variables in a dataframe, use the following syntax:
 list(mydata.columns)
 ```
 
-# Logical Operators {#logicalOperators}
+# Logical Operators {#sec-logicalOperators}
 
 Logical operators evaluate a condition for each value and yield values of `True` and `False`, corresponding to whether the evaluation for a given value met the condition.
 
@@ -220,7 +219,7 @@ mydata['prediction'].notnull() & (mydata['parch'] >= 1)
 mydata['prediction'].isnull() | (mydata['parch'] >= 1)
 ```
 
-# Subset {#subset}
+# Subset {#sec-subset}
 
 To subset a dataframe, you can use the `loc` and `iloc` accessors, or directly access the columns by their names.
 
@@ -294,7 +293,7 @@ mydata.iloc[subsetRows][subsetVars]
 mydata.loc[mydata['survived'] == 1, subsetVars]
 ```
 
-# View Data {#viewData}
+# View Data {#sec-viewData}
 
 ## All Data
 
@@ -319,7 +318,7 @@ mydata.head()
 mydata['age'].head()
 ```
 
-# Data Characteristics {#dataCharacteristics}
+# Data Characteristics {#sec-dataCharacteristics}
 
 ## Data Structure
 
@@ -353,7 +352,7 @@ print(mydata['age'].isnull().sum())
 print(mydata['age'].notnull().sum())
 ```
 
-# Create New Variables {#createNewVars}
+# Create New Variables {#sec-createNewVars}
 
 To create a new variable, you can directly assign a value to a new column in the dataframe.
 
@@ -367,7 +366,7 @@ Here is an example of creating a new variable:
 mydata['ID'] = range(1, len(mydata) + 1)
 ```
 
-# Create a Dataframe {#createDF}
+# Create a Dataframe {#sec-createDF}
 
 Here is an example of creating a dataframe:
 
@@ -380,7 +379,7 @@ mydata2 = pd.DataFrame({ # uses pandas module
 mydata2
 ```
 
-# Recode Variables {#recodeVars}
+# Recode Variables {#sec-recodeVars}
 
 Here is an example of recoding a variable:
 
@@ -404,7 +403,7 @@ for col in columns_to_recode:
     mydata[col] = mydata[col].map(lambda x: 1 if x in [0, 1] else 2)
 ```
 
-# Rename Variables {#renameVars}
+# Rename Variables {#sec-renameVars}
 
 ```{python}
 mydata = mydata.rename(columns = {
@@ -426,7 +425,7 @@ rename_dict = dict(zip(varNamesFrom, varNamesTo))
 mydata = mydata.rename(columns = rename_dict)
 ```
 
-# Convert the Types of Variables {#convertVarTypes}
+# Convert the Types of Variables {#sec-convertVarTypes}
 
 One variable:
 
@@ -442,13 +441,14 @@ Multiple variables:
 ```{python}
 mydata[['age', 'parch', 'prediction']] = mydata[['age', 'parch', 'prediction']].astype(float)
 
+mydata[mydata.loc[:, 'age':'parch'].columns] = mydata.loc[:, 'age':'parch'].astype(float)
 
 # Convert all categorical columns to string
 for col in mydata.select_dtypes('category').columns:
     mydata[col] = mydata[col].astype(str)
 ```
 
-# Merging/Joins {#merging}
+# Merging/Joins {#sec-merging}
 
 ## Overview
 
@@ -489,7 +489,7 @@ print(mydata2)
 print(mydata2.shape)
 ```
 
-## Types of Joins {#mergeTypes}
+## Types of Joins {#sec-mergeTypes}
 
 ### Visual Overview of Join Types
 
@@ -505,7 +505,7 @@ For instance, a left outer join keeps the shared rows and the rows that are uniq
 
 Image source: [Predictive Hacks](https://predictivehacks.com/?all-tips=anti-joins-with-pandas) (archived at: <https://perma.cc/WV7U-BS68>)
 
-### Full Outer Join {#fullJoin}
+### Full Outer Join {#sec-fullJoin}
 
 A full outer join includes all rows in $x$ **or** $y$.
 It returns columns from $x$ and $y$.
@@ -518,7 +518,7 @@ print(fullJoinData)
 print(fullJoinData.shape)
 ```
 
-### Left Outer Join {#leftJoin}
+### Left Outer Join {#sec-leftJoin}
 
 A left outer join includes all rows in $x$.
 It returns columns from $x$ and $y$.
@@ -531,7 +531,7 @@ print(leftJoinData)
 print(leftJoinData.shape)
 ```
 
-### Right Outer Join {#rightJoin}
+### Right Outer Join {#sec-rightJoin}
 
 A right outer join includes all rows in $y$.
 It returns columns from $x$ and $y$.
@@ -544,7 +544,7 @@ print(rightJoinData)
 print(rightJoinData.shape)
 ```
 
-### Inner Join {#innerJoin}
+### Inner Join {#sec-innerJoin}
 
 An inner join includes all rows that are in **both** $x$ **and** $y$.
 An inner join will return one row of $x$ for each matching row of $y$, and can duplicate values of records on either side (left or right) if $x$ and $y$ have more than one matching record.
@@ -558,7 +558,7 @@ print(innerJoinData)
 print(innerJoinData.shape)
 ```
 
-### Cross Join {#crossJoin}
+### Cross Join {#sec-crossJoin}
 
 A cross join combines each row in $x$ with each row in $y$.
 
@@ -572,7 +572,7 @@ print(crossJoinData)
 print(crossJoinData.shape)
 ```
 
-# Long to Wide {#longToWide}
+# Long to Wide {#sec-longToWide}
 
 ```{python}
 import seaborn as sns
@@ -597,7 +597,7 @@ iris_wide = iris_long.pivot_table(
 print(iris_wide)
 ```
 
-# Wide to Long {#wideToLong}
+# Wide to Long {#sec-wideToLong}
 
 Original data:
 
@@ -621,7 +621,7 @@ iris_long = iris.melt(
 print(iris_long)
 ```
 
-# Average Ratings Across Coders {#avgAcrossCoders}
+# Average Ratings Across Coders {#sec-avgAcrossCoders}
 
 Create data with multiple coders:
 

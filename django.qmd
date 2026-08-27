@@ -20,21 +20,21 @@ format:
 
 `Django` uses a Model-View-Controller architecture.
 
-### URL Patterns {#urlPatterns}
+### URL Patterns {#sec-urlPatterns}
 
-The URL patterns determine which [view](#views) to pass the request to for handling.
+The URL patterns determine which [view](#sec-views) to pass the request to for handling.
 URL patterns are defined in `urls.py`.
 
-### Views {#views}
+### Views {#sec-views}
 
 Views provide the logic or control flow portion of the project.
 A view is a `Python` callable, such as a function that takes an `HTTP` request as an argument and returns an `HTTP` response for the web server to return.
-Each view we define can leverage [models](#models) and [templates](#templates).
+Each view we define can leverage [models](#sec-models) and [templates](#sec-templates).
 Views are defined in `views.py`.
 
-### Models {#models}
+### Models {#sec-models}
 
-To perform queries against the database, each [view](#views) can leverage `Django` models as needed.
+To perform queries against the database, each [view](#sec-views) can leverage `Django` models as needed.
 A `Django` model is a class with attributes.
 These model classes provide built-in methods for making queries on the associated database tables. 
 Each model is a database table (i.e., spreadsheet).
@@ -43,9 +43,9 @@ Each database record is a row in the spreadsheet
 Models create the data layer of a `Django` app, by defining the schema or underlying structure of a database table.
 Models are defined in `models.py`.
 
-#### Defining Fields {#fields}
+#### Defining Fields {#sec-fields}
 
-Fields are columns/variables in the database table that are defined by [models](#models).
+Fields are columns/variables in the database table that are defined by [models](#sec-models).
 Field types and field options are provided in the `Django` documentation here: https://docs.djangoproject.com/en/5.0/ref/models/fields/
 
 Examples of field types include:
@@ -72,7 +72,7 @@ Common field attributes:
 - `null`: True or False; determines whether a field can be stored as a null (i.e., there is no data for that field in a given record)
 - `choices`: limits the values that can be stored in that field to a set of choices that are provided
 
-#### Migrations {#migrations}
+#### Migrations {#sec-migrations}
 
 Migrations create the necessary scripts to change the database structure through time as we update our code to change our models.
 
@@ -108,7 +108,7 @@ When a migration has been created, but not yet run, we call this an "unapplied m
 This is a common source of errors during development, especially when collaborating with other developers.
 With this in mind, be sure that when working on a team, to coordinate carefully who is changing which model, and to look for new migration files when pulling in code changes.
 
-### Templates {#templates}
+### Templates {#sec-templates}
 
 Each view we define can also leverage templates, which help with the presentation layer of what the `HTML` response will look like.
 Each template is a separate file that consists of `HTML` along with some extra template syntax for variables, loops, and other control flow.
