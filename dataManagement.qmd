@@ -13,6 +13,33 @@ format:
 ---
 
 # Import Modules {#importModules}
+# Install Modules {#sec-installModules}
+
+Terminal/command prompt:
+
+```{bash}
+#| eval: false
+
+pip install numpy pandas matplotlib seaborn
+```
+
+Jupyter:
+
+```{bash}
+#| eval: false
+
+%pip install numpy pandas matplotlib seaborn
+```
+
+Anaconda:
+
+```{bash}
+#| eval: false
+
+conda install numpy pandas matplotlib seaborn
+```
+
+# Import Modules {#sec-importModules}
 
 The default way to import a module in `Python` is:
 
