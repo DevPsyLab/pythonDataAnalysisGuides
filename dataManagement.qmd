@@ -16,24 +16,21 @@ format:
 
 Terminal/command prompt:
 
-```{bash}
-#| eval: false
+```bash
 
 pip install numpy pandas matplotlib seaborn
 ```
 
 Jupyter:
 
-```{bash}
-#| eval: false
+```bash
 
 %pip install numpy pandas matplotlib seaborn
 ```
 
 Anaconda:
 
-```{bash}
-#| eval: false
+```bash
 
 conda install numpy pandas matplotlib seaborn
 ```
