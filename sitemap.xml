@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/dataManagement.html</loc>
-    <lastmod>2026-08-27T13:38:22.365Z</lastmod>
-  </url>
-  <url>
     <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/django.html</loc>
-    <lastmod>2026-08-27T13:38:22.365Z</lastmod>
-  </url>
-  <url>
-    <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/about.html</loc>
-    <lastmod>2026-08-27T13:38:22.364Z</lastmod>
+    <lastmod>2026-11-17T21:10:33.195Z</lastmod>
   </url>
   <url>
     <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/python.html</loc>
-    <lastmod>2026-08-27T13:38:22.376Z</lastmod>
+    <lastmod>2026-11-17T21:10:33.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/dataManagement.html</loc>
+    <lastmod>2026-11-17T21:10:33.195Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/about.html</loc>
+    <lastmod>2026-11-17T21:10:33.195Z</lastmod>
   </url>
   <url>
     <loc>https://DevPsyLab.github.io/pythonDataAnalysisGuides/index.html</loc>
-    <lastmod>2026-08-27T13:38:22.376Z</lastmod>
+    <lastmod>2026-11-17T21:10:33.206Z</lastmod>
   </url>
 </urlset>
